@@ -43,5 +43,16 @@ Actual time needed to complete: _____
 ## Credits and Collaborations
 Brandon Johnson, Shingo Nakajima, Peter Cole, CodeFellows 301
 
-<!-- need Trello, heroku, user stories, wireframes -->
+## Links
 
+* Trello: https://trello.com/b/0b6nE6fw/deck-builder
+
+* Heroku:
+
+## User Stories
+
+ <!-- user stories -->
+
+## Wireframes
+
+<!-- wireframes -->
