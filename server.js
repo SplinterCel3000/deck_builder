@@ -61,7 +61,7 @@ app.use('*', (request, response) => {
 });
 
 
-//Constructor for Magic cards
+//CONSTRUCTOR for Magic cards
 
 function Cards(cardObj) {
   this.name
