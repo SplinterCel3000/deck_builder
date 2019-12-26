@@ -1,0 +1,26 @@
+{
+  "name": "deck_builder",
+  "version": "1.0.0",
+  "description": "301 Final Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SplinterCel3000/deck_builder.git"
+  },
+  "author": "BJ SN PC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SplinterCel3000/deck_builder/issues"
+  },
+  "homepage": "https://github.com/SplinterCel3000/deck_builder#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "pg": "^7.15.2"
+  }
+}
