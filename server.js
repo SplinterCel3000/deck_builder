@@ -60,6 +60,13 @@ app.use('*', (request, response) => {
   response.status(404).send('Page Not Found');
 });
 
+
+//Constructor for Magic cards
+
+function Cards(cardObj) {
+  
+}
+
 // SERVER LISTENER
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
