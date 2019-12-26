@@ -6,8 +6,6 @@ body {
   width: 100%;
 }
 
-/************************************* end of buttons *******************************************/
-
 .motto{
   font-style: oblique;
 }
@@ -18,15 +16,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
   }
 
-.github-image {
-  width: 100px;
-  height: auto;
+.github-logo {
+  max-width: 80px;
   padding: 20px;
-}
-
-.github-image {
-  width: 50px;
-  height: auto;
 }
 
 .devs{
@@ -35,11 +27,10 @@ body {
 }
 
 .paragraph{
+  display: flex;
+  width: 40%;
+  margin: auto;
   text-align: center;
-}
-
-.github-logo{
-  align-content: center;
 }
 
 .bold-name{
@@ -148,6 +139,11 @@ body {
   top: 400px;
   left: 500px;
 } 
+
+#pic{
+  max-width:50%;
+  max-height: 50%;
+}
 
 /* front pane, placed above back */
 .front-shingo {

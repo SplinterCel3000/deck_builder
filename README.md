@@ -28,17 +28,17 @@ Actual time needed to complete: _____
 
 ## 
 
-Number and name of feature: ____
+Number and name of feature: About Us page
 
-Estimate of time needed to complete: ____
+Estimate of time needed to complete: 2hrs
 
-Start time: 9am
+Start time: 12pm
 
-Finish time: _____
+Finish time: 3pm
 
-Actual time needed to complete: _____
+Actual time needed to complete: 3hrs
 
-12-__-____ 9:00am - _______
+12-26- 9:00am - About Us set up
 
 ## Credits and Collaborations
 Brandon Johnson, Shingo Nakajima, Peter Cole, CodeFellows 301
