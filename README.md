@@ -25,6 +25,7 @@ Finish time: _____
 Actual time needed to complete: _____
 
 12-26-2019 9:00am - Repo set up
+12-26-2019 1:19pm - Proof of Life, deployed on Heroku
 
 ## 
 
