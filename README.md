@@ -10,7 +10,7 @@ Using the Skryfall API, query a deck building app that allows the tracking of de
 <!-- update -->
 
 ## Architecture
-HTML, SMACSS, JS, jQuery, SQL, POSTGRES, POSTMAN, HEROKU, EXPRESS, SUPERAGENT
+HTML, SMACSS, JS, jQuery, SQL, POSTGRES (PG), POSTMAN, HEROKU, EXPRESS, SUPERAGENT, NODEMON, EJS
 
 ## Change Log
 
