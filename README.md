@@ -26,5 +26,19 @@ Actual time needed to complete: _____
 
 12-26-2019 9:00am - Repo set up
 
+## 
+
+Number and name of feature: ____
+
+Estimate of time needed to complete: ____
+
+Start time: 9am
+
+Finish time: _____
+
+Actual time needed to complete: _____
+
+12-__-____ 9:00am - _______
+
 ## Credits and Collaborations
 Brandon Johnson, Shingo Nakajima, Peter Cole, CodeFellows 301
