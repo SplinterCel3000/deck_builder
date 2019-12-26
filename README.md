@@ -80,4 +80,6 @@ Brandon Johnson, Shingo Nakajima, Peter Cole, CodeFellows 301
 
 ## Wireframes
 
-<!-- shingo wireframes -->
+* either link
+
+* or copy paste
