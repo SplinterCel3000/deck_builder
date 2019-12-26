@@ -3,4 +3,170 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgb(164, 164, 164);
   text-shadow: 2px 2px lightgrey;
+  width: 100%;
 }
+
+/************************************* end of buttons *******************************************/
+
+.motto{
+  font-style: oblique;
+}
+.dev-content {
+    font-size: 20px;
+    text-align: center;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+.github-image {
+  width: 100px;
+  height: auto;
+  padding: 20px;
+}
+
+.github-image {
+  width: 50px;
+  height: auto;
+}
+
+.devs{
+  font-style: bold;
+  font-size: 18px;
+}
+
+.paragraph{
+  text-align: center;
+}
+
+.github-logo{
+  align-content: center;
+}
+
+.bold-name{
+  font-weight: bold;
+}
+
+.paragraph-name{
+  display: flex;
+  width: 40%;
+  margin: auto;
+  text-align: center;
+}
+/************************************* FLIPPING ANIMATION *******************************************/
+
+/* entire container, keeps perspective */
+.flip-container {
+  perspective: 1000px;
+}
+
+  /* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+  transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+  max-height: 10px;
+}
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+/************************************* end of FLIPPING ANIMATION *******************************************/
+
+/************************************* PETER *******************************************/
+
+
+/* hide back of pane during swap */
+ .front, .back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0px;
+  left: 500px;
+} 
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  transform: rotateY(0deg);
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0px;
+  left: 500px;
+}
+
+/* back, initially hidden pane */
+ .back {
+  transform: rotateY(180deg);
+  height: 100px;
+  position: absolute;
+  top: 0px;
+  right: 500px;
+} 
+
+/************************************* end of PETER *******************************************/
+
+/************************************* BRANDON *******************************************/
+
+/* hide back of pane during swap */
+ .front-brandon, .back-brandon {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 400px;
+  left: 500px;
+} 
+
+/* front pane, placed above back */
+.front-brandon {
+  z-index: 2;
+  transform: rotateY(0deg);
+  backface-visibility: hidden;
+  position: absolute;
+  top: 400px;
+  left: 500px;
+}
+
+/* back, initially hidden pane */
+.back-brandon {
+  transform: rotateY(180deg);
+  height: 100px;
+  position: absolute;
+  top: 400px;
+  right: 400px;
+}
+/************************************* end of BRANDON *******************************************/
+
+
+/************************************* SHINGO *******************************************/
+
+/* hide back of pane during swap */
+ .front-shingo, .back-shingo {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 400px;
+  left: 500px;
+} 
+
+/* front pane, placed above back */
+.front-shingo {
+  z-index: 2;
+  transform: rotateY(0deg);
+  backface-visibility: hidden;
+  position: absolute;
+  top: 800px;
+  left: 500px;  
+}
+
+/* back, initially hidden pane */
+.back-shingo {
+  transform: rotateY(180deg);
+  height: 100px;
+  position: absolute;
+  top: 800px;
+  right: 400px;
+}
+/************************************* end of SHINGO *******************************************/
+
+
