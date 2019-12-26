@@ -64,7 +64,9 @@ app.use('*', (request, response) => {
 //Constructor for Magic cards
 
 function Cards(cardObj) {
-  
+  this.name
+  this.released
+  this.image
 }
 
 // SERVER LISTENER
