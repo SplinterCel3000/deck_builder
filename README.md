@@ -42,3 +42,6 @@ Actual time needed to complete: _____
 
 ## Credits and Collaborations
 Brandon Johnson, Shingo Nakajima, Peter Cole, CodeFellows 301
+
+<!-- need Trello, heroku, user stories, wireframes -->
+
