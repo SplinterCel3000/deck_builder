@@ -1,4 +1,4 @@
-# deck_builder App
+# Deck Builder App
 
 **Author**: Brandon Johnson, Shingo Nakajima, Peter Cole
 **Version**: 1.0.0
