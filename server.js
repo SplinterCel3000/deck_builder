@@ -39,6 +39,7 @@ function aboutUsRender(request, response) {
 }
 
 function resultsRender(request, response) {
+  // CALL FOR A NEW Cards FROM API
   response.render('./pages/results')
 }
 
@@ -64,9 +65,10 @@ app.use('*', (request, response) => {
 //CONSTRUCTOR for Magic cards
 
 function Cards(cardObj) {
-  this.name
-  this.released
-  this.image
+  this.name = cardObj.name;
+  this.released = cardObj.released;
+  this.image_url = cardObj.image_url;
+  this.legal = cardObj.legal;
 }
 
 // SERVER LISTENER
