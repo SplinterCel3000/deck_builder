@@ -1,30 +1,30 @@
-
 DROP TABLE collection;
 CREATE TABLE IF NOT EXISTS collection (
   id SERIAL PRIMARY KEY,
   name VARCHAR(255),
   date VARCHAR(255),
   image_url TEXT,
-  legal VARCHAR(255)
+  legal VARCHAR(255),
+  tag VARCHAR(255)
 );
 
-DROP TABLE wishlist;
-CREATE TABLE IF NOT EXISTS wishlist (
-  id SERIAL PRIMARY KEY,
-  name VARCHAR(255),
-  date VARCHAR(255),
-  image_url TEXT,
-  legal VARCHAR(255)
-);
+-- DROP TABLE wishlist;
+-- CREATE TABLE IF NOT EXISTS wishlist (
+--   id SERIAL PRIMARY KEY,
+--   name VARCHAR(255),
+--   date VARCHAR(255),
+--   image_url TEXT,
+--   legal VARCHAR(255)
+-- );
 
-DROP TABLE results
-CREATE TABLE IF NOT EXISTS results (
-  id SERIAL PRIMARY KEY,
-  name VARCHAR(255),
-  date VARCHAR(255),
-  image_url TEXT,
-  legal VARCHAR(255)
-);
+-- DROP TABLE results
+-- CREATE TABLE IF NOT EXISTS results (
+--   id SERIAL PRIMARY KEY,
+--   name VARCHAR(255),
+--   date VARCHAR(255),
+--   image_url TEXT,
+--   legal VARCHAR(255)
+-- );
 
 --  DECK: deck VARCHAR(255)
 

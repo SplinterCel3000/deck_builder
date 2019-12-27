@@ -7,7 +7,7 @@ require('dotenv').config();
 
 const pg = require('pg');
 const client = new pg.Client(process.env.DATABASE_URL);
-// const superagent = require('superagent');
+const superagent = require('superagent');
 // const methodOverride = require('method-override');
 
 const PORT = process.env.PORT || 3001;
@@ -27,6 +27,34 @@ app.get('/results', resultsRender);
 app.get('/collection', collectionRender);
 app.get('/wish-list', wishListRender);
 app.get('/error', errorRender);
+
+app.post('/results', getCardInfo);
+
+// API CALL
+function getCardInfo(request, response) {
+  let url = 'https://api.scryfall.com/cards/search?q='
+  let cardSearch = request.body;
+  let searchCriteria = request.body.search;
+
+  // if (cardSearch === 'name') {
+  //   url += `+inname:${searchCriteria}`
+  // }
+
+  url += searchCriteria;
+  console.log(url)
+  superagent.get(url)
+    .then(res => {
+      console.log(res.body)
+      let cardArray = res.body.data.map(card => {
+        return new Cards(card)
+      });
+      response.render('pages/results', { cardArray: cardArray });
+    })
+    .catch(error => {
+      // response.render('pages/error')
+      console.log(error)
+    })
+}
 
 // PAGE RENDER
 
@@ -66,9 +94,10 @@ app.use('*', (request, response) => {
 
 function Cards(cardObj) {
   this.name = cardObj.name;
-  this.released = cardObj.released;
-  this.image_url = cardObj.image_url;
-  this.legal = cardObj.legal;
+  this.released = cardObj.released_at;
+  this.image_url = cardObj.image_uris.normal;
+  this.legal = cardObj.legalities;
+  this.tag = cardObj.tag;
 }
 
 // SERVER LISTENER

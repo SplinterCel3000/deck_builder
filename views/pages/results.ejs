@@ -20,6 +20,8 @@
     <p><%= card.released %></p>
     <p><%= card.legal %></p>
 
+    <form action="/results" method="post"></form>
+
     <!-- ADD TO WISH LIST -->
 
     <form action="/wish-list" method="post">
@@ -29,7 +31,7 @@
         <input type="hidden" name="image_url" value="<%= card.image_url %>"></input>
         <!-- <input type="hidden" name="deck" value="<%= card.deck %>"></input> -->
         <button type="submit">Add Card to Wish List</button>
-        
+
       </fieldset>
     </form>
 
@@ -42,10 +44,10 @@
         <input type="hidden" name="image_url" value="<%= card.image_url %>"></input>
         <!-- <input type="hidden" name="deck" value="<%= card.deck %>"></input> -->
         <button type="submit">Add Card to Collection</button>
-        
+
       </fieldset>
     </form>
-    
+
   </div>
   <% }) %>
 
