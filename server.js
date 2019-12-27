@@ -33,26 +33,21 @@ app.post('/results', getCardInfo);
 // API CALL
 function getCardInfo(request, response) {
   let url = 'https://api.scryfall.com/cards/search?q='
-  let cardSearch = request.body;
   let searchCriteria = request.body.search;
 
-  // if (cardSearch === 'name') {
-  //   url += `+inname:${searchCriteria}`
-  // }
-
   url += searchCriteria;
-  console.log(url)
+
   superagent.get(url)
     .then(res => {
-      console.log(res.body)
+
       let cardArray = res.body.data.map(card => {
         return new Cards(card)
       });
-      response.render('pages/results', { cardArray: cardArray });
+      let totalCardCount = (res.body.total_cards);
+      response.render('pages/results', { cardArray: cardArray, totalCardCount: totalCardCount });
     })
     .catch(error => {
-      // response.render('pages/error')
-      console.log(error)
+      response.render('pages/error')
     })
 }
 
@@ -88,7 +83,6 @@ function errorRender(request, response) {
 app.use('*', (request, response) => {
   response.status(404).send('Page Not Found');
 });
-
 
 //CONSTRUCTOR for Magic cards
 
