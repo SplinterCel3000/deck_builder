@@ -12,6 +12,9 @@ const superagent = require('superagent');
 
 const PORT = process.env.PORT || 3001;
 
+const placeHolderImage = 'https://i.stack.imgur.com/787gj.png';
+
+
 client.on('error', (error) => console.log(error));
 
 app.set('view engine', 'ejs');
@@ -48,7 +51,8 @@ function getCardInfo(request, response) {
       response.render('pages/results', { cardArray: cardArray, totalCardCount: totalCardCount });
     })
     .catch(error => {
-      response.render('pages/error')
+      console.log(error)
+      // response.render('pages/error')
     })
 }
 
@@ -88,14 +92,15 @@ app.use('*', (request, response) => {
 // CONSTRUCTOR for Magic cards
 
 function Cards(cardObj) {
-  this.name = cardObj.name;
-  this.released = cardObj.released_at;
-  this.image_url = cardObj.image_uris.normal;
-  this.legal = cardObj.legalities.standard;
-  this.legal1 = cardObj.legalities.pioneer;
-  this.legal2 = cardObj.legalities.modern;
-  this.legal3 = cardObj.legalities.legacy;
-  this.legal4 = cardObj.legalities.commander;
+  this.name = cardObj.name || 'no name available';
+  this.released = cardObj.released_at || 'no release date available';
+  this.image_url = cardObj.image_uris ? (cardObj.image_uris.normal ? cardObj.image_uris.normal : (cardObj.image_uris.png ? cardObj.image_uris.png : placeHolderImage)) : placeHolderImage;
+
+  this.legal = cardObj.legalities.standard || 'no legality available';
+  this.legal1 = cardObj.legalities.pioneer || 'no legality available';
+  this.legal2 = cardObj.legalities.modern || 'no legality available';
+  this.legal3 = cardObj.legalities.legacy || 'no legality available';
+  this.legal4 = cardObj.legalities.commander || 'no legality available';
   this.tag = cardObj.tag;
 }
 
