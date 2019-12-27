@@ -53,9 +53,21 @@ Finish time: 3pm
 
 Actual time needed to complete: 3hrs
 
+- 12-26- 9:00am - About Us set up
 
-12-26- 9:00am - About Us set up
+## 
 
+Number and name of feature: Results Page Render
+
+Estimate of time needed to complete: 3hrs
+
+Start time: 9:30am
+
+Finish time: 1:30pm
+
+Actual time needed to complete: 4hrs
+
+- 12-27-2019 1:53am - Results page function, live on Heroku
 
 ## Credits and Collaborations
 Brandon Johnson, Shingo Nakajima, Peter Cole, CodeFellows 301
