@@ -29,20 +29,6 @@ Actual time needed to complete: 4.5 hours
 
 ## 
 
-Number and name of feature: Day - 1 About Us
-
-Estimate of time needed to complete: 2 hours
-
-Start time: 1pm
-
-Finish time: ____
-
-Actual time needed to complete: ____
-
-- 12-26-2019 3:00pm - Functional About Us page
-
-## 
-
 Number and name of feature: Day 2 - SQL Database Populate and Results Render
 
 Estimate of time needed to complete: 2 hours
@@ -108,6 +94,6 @@ Brandon Johnson, Shingo Nakajima, Peter Cole, CodeFellows 301
 
 ## Wireframes
 
-* either link
-
 * or copy paste
+
+
