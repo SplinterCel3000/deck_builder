@@ -31,6 +31,7 @@ app.get('/error', errorRender);
 app.post('/results', getCardInfo);
 
 // API CALL
+
 function getCardInfo(request, response) {
   let url = 'https://api.scryfall.com/cards/search?q='
   let searchCriteria = request.body.search;
@@ -84,7 +85,7 @@ app.use('*', (request, response) => {
   response.status(404).send('Page Not Found');
 });
 
-//CONSTRUCTOR for Magic cards
+// CONSTRUCTOR for Magic cards
 
 function Cards(cardObj) {
   this.name = cardObj.name;
