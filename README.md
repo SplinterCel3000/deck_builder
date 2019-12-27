@@ -94,6 +94,21 @@ Brandon Johnson, Shingo Nakajima, Peter Cole, CodeFellows 301
 
 ## Wireframes
 
-* or copy paste
+#### Database Entity Relationship
+![Database Entity Relationship](https://github.com/SplinterCel3000/deck_builder/blob/peter/assets/db-entity-rel.jpg)
 
+#### Domain Model
+![Domain Model](https://github.com/SplinterCel3000/deck_builder/blob/peter/assets/domain-model.jpg)
+
+#### Wireframe - Deck Builder
+![Deck Builder](https://github.com/SplinterCel3000/deck_builder/blob/peter/assets/wf-1.jpg)
+
+#### Wireframe - Results
+![Results](https://github.com/SplinterCel3000/deck_builder/blob/peter/assets/wf-2.jpg)
+
+#### Wireframe - Collection
+![Collection](https://github.com/SplinterCel3000/deck_builder/blob/peter/assets/wf-3.jpg)
+
+#### Wireframe - Wish List
+![Wishlist](https://github.com/SplinterCel3000/deck_builder/blob/peter/assets/wf-4.jpg)
 
