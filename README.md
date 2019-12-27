@@ -56,4 +56,5 @@ Brandon Johnson, Shingo Nakajima, Peter Cole, CodeFellows 301
 
 ## Wireframes
 
-<!-- wireframes -->
+Image from iOS.jpg
+
