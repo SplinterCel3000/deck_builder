@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <h1>Results</h1>
+  <h1>Results: <%= totalCardCount %></h1>
   <a href="/" target="_self">Home</a>
 
   <% cardArray.forEach(card => { %>
@@ -23,7 +23,6 @@
     <p>Modern: <%= card.legal2 %></p>
     <p>Legacy: <%= card.legal3 %></p>
     <p>Commander: <%= card.legal4 %></p>
-
 
     <form action="/results" method="post"></form>
 
