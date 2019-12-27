@@ -96,7 +96,11 @@ function Cards(cardObj) {
   this.name = cardObj.name;
   this.released = cardObj.released_at;
   this.image_url = cardObj.image_uris.normal;
-  this.legal = cardObj.legalities;
+  this.legal = cardObj.legalities.standard;
+  this.legal1 = cardObj.legalities.pioneer;
+  this.legal2 = cardObj.legalities.modern;
+  this.legal3 = cardObj.legalities.legacy;
+  this.legal4 = cardObj.legalities.commander;
   this.tag = cardObj.tag;
 }
 
