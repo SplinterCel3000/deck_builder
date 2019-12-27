@@ -1,3 +1,42 @@
+
+DROP TABLE collection;
+CREATE TABLE IF NOT EXISTS collection (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  date VARCHAR(255),
+  image_url TEXT,
+  legal VARCHAR(255)
+);
+
+DROP TABLE wishlist;
+CREATE TABLE IF NOT EXISTS wishlist (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  date VARCHAR(255),
+  image_url TEXT,
+  legal VARCHAR(255)
+);
+
+DROP TABLE results
+CREATE TABLE IF NOT EXISTS results (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  date VARCHAR(255),
+  image_url TEXT,
+  legal VARCHAR(255)
+);
+
+--  DECK: deck VARCHAR(255)
+
+--  TOTAL CARDS: data.total_cards (integer)
+--  NAME: data.object.name (string)
+--  RELEASE DATE: data.object.released_at (FULLYEAR-MONTH-DAY, 2015-03-27)
+--  IMAGE: data.object.image_uris.normal (https string, run cleaner)
+--  LEGAL: data.object.legalities.standard (string, 'legal' || 'not_legal')
+
+--  DESCRIPTION: data.object.oracle_text (string, but contains obj literals)
+
+
 --   "object": "list",
 --     "total_cards": 164,  <-- this one
 --     "has_more": false,
