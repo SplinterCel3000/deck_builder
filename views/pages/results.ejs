@@ -16,9 +16,14 @@
   <% cardArray.forEach(card => { %>
   <div>
     <img src=<%= card.image_url %>>
-    <h3><%= card.name %></h3>
-    <p><%= card.released %></p>
-    <p><%= card.legal %></p>
+    <h3>Card name: <%= card.name %></h3>
+    <p>Release date: <%= card.released %></p>
+    <p>Standard: <%= card.legal %></p>
+    <p>Pioneer: <%= card.legal1 %></p>
+    <p>Modern: <%= card.legal2 %></p>
+    <p>Legacy: <%= card.legal3 %></p>
+    <p>Commander: <%= card.legal4 %></p>
+
 
     <form action="/results" method="post"></form>
 
