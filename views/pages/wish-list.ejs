@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,26 @@
   <link rel="stylesheet" href="./styles/style.css">
   <title>Wish List</title>
 </head>
+
 <body>
   <h1>Wish List</h1>
   <a href="/" target="_self">Home</a>
   <a href="/collection" target="_self">Collection</a>
 
+  <% cardArrwishlist.forEach(card => { %>
+  <div>
+    <img src=<%= card.image_url %>>
+    <h3>Card name: <%= card.name %></h3>
+    <p>Release date: <%= card.date %></p>
+    <p>Standard: <%= card.legal0 %></p>
+    <p>Pioneer: <%= card.legal1 %></p>
+    <p>Modern: <%= card.legal2 %></p>
+    <p>Legacy: <%= card.legal3 %></p>
+    <p>Commander: <%= card.legal4 %></p>
+  </div>
+  <% }) %>
+
   <script src="./js/app.js"></script>
 </body>
+
 </html>

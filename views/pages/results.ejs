@@ -17,8 +17,8 @@
   <div>
     <img src=<%= card.image_url %>>
     <h3>Card name: <%= card.name %></h3>
-    <p>Release date: <%= card.released %></p>
-    <p>Standard: <%= card.legal %></p>
+    <p>Release date: <%= card.date %></p>
+    <p>Standard: <%= card.legal0 %></p>
     <p>Pioneer: <%= card.legal1 %></p>
     <p>Modern: <%= card.legal2 %></p>
     <p>Legacy: <%= card.legal3 %></p>
@@ -31,9 +31,14 @@
     <form action="/wish-list" method="post">
       <fieldset>
         <input type="hidden" name="name" value="<%= card.name %>"></input>
-        <input type="hidden" name="released" value="<%= card.released %>"></input>
+        <input type="hidden" name="date" value="<%= card.date %>"></input>
         <input type="hidden" name="image_url" value="<%= card.image_url %>"></input>
-        <!-- <input type="hidden" name="deck" value="<%= card.deck %>"></input> -->
+        <input type="hidden" name="legal0" value="<%= card.legal0 %>"></input>
+        <input type="hidden" name="legal1" value="<%= card.legal1 %>"></input>
+        <input type="hidden" name="legal2" value="<%= card.legal2 %>"></input>
+        <input type="hidden" name="legal3" value="<%= card.legal3 %>"></input>
+        <input type="hidden" name="legal4" value="<%= card.legal4 %>"></input>
+        <input type="hidden" name="tag" value="wishlist"></input>
         <button type="submit">Add Card to Wish List</button>
 
       </fieldset>
@@ -44,9 +49,14 @@
     <form action="/collection" method="post">
       <fieldset>
         <input type="hidden" name="name" value="<%= card.name %>"></input>
-        <input type="hidden" name="released" value="<%= card.released %>"></input>
+        <input type="hidden" name="date" value="<%= card.date%>"></input>
         <input type="hidden" name="image_url" value="<%= card.image_url %>"></input>
-        <!-- <input type="hidden" name="deck" value="<%= card.deck %>"></input> -->
+        <input type="hidden" name="legal0" value="<%= card.legal0 %>"></input>
+        <input type="hidden" name="legal1" value="<%= card.legal1 %>"></input>
+        <input type="hidden" name="legal2" value="<%= card.legal2 %>"></input>
+        <input type="hidden" name="legal3" value="<%= card.legal3 %>"></input>
+        <input type="hidden" name="legal4" value="<%= card.legal4 %>"></input>
+        <input type="hidden" name="tag" value="collection"></input>
         <button type="submit">Add Card to Collection</button>
 
       </fieldset>
