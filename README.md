@@ -83,6 +83,7 @@ Actual time needed to complete: 30min
 ​
 - 12-27-2019 4:42pm - Wishlist page functional, live on Heroku
 ​
+
 ## Credits and Collaborations
 Brandon Johnson, Shingo Nakajima, Peter Cole, CodeFellows 301
 ​
