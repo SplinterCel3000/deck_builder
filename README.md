@@ -14,86 +14,86 @@ HTML, SMACSS, JS, JQUERY, AJAX, SQL, POSTMAN, HEROKU, EXPRESS, DOTENV, POSTGRES 
 ​
 ## Change Log
 ​
-Number and name of feature: Day 1 - User stories, repository set up, file structure, wireframing, proof of life
+Number and name of feature: Day 1 - User stories, repository set up, file structure, wireframing, proof of life  
 ​
-Estimate of time needed to complete: 4 hours
+Estimate of time needed to complete: 4 hours  
 ​
-Start time: 9am
+Start time: 9am  
 ​
-Finish time: 1:30pm
+Finish time: 1:30pm  
 ​
-Actual time needed to complete: 4.5 hours
+Actual time needed to complete: 4.5 hours  
 ​
 - 12-26-2019 9:00am - Repo set up
 - 12-26-2019 1:19pm - Proof of life functional, deployed on Heroku
 ​
 ---
 ​
-Number and name of feature: Day 1 - About Us page
+Number and name of feature: Day 1 - About Us page  
 ​
-Estimate of time needed to complete: 2hrs
+Estimate of time needed to complete: 2hrs  
 ​
-Start time: 12pm
+Start time: 12pm  
 ​
-Finish time: 3pm
+Finish time: 3pm  
 ​
-Actual time needed to complete: 3hrs
+Actual time needed to complete: 3hrs  
 ​
 - 12-26-2019 9:00am - About Us functional, live on Heroku
 ​
 ---
 ​
-Number and name of feature: Day 2 - Results Page Render
+Number and name of feature: Day 2 - Results Page Render  
 ​
-Estimate of time needed to complete: 3hrs
+Estimate of time needed to complete: 3hrs  
 ​
-Start time: 9:30am
+Start time: 9:30am  
 ​
-Finish time: 1:30pm
+Finish time: 1:30pm  
 ​
-Actual time needed to complete: 4hrs
+Actual time needed to complete: 4hrs  
 ​
 - 12-27-2019 1:53am - Results page functional, live on Heroku
 ​
 ---
 
-Number and name of feature: Day 2 - Collection Page Render
+Number and name of feature: Day 2 - Collection Page Render  
 ​
-Estimate of time needed to complete: 3hrs
+Estimate of time needed to complete: 3hrs  
 ​
-Start time: 1:30pm
+Start time: 1:30pm  
 ​
-Finish time: 4:09pm
+Finish time: 4:09pm  
 ​
-Actual time needed to complete: 2.5hrs
+Actual time needed to complete: 2.5hrs  
 ​
 - 12-27-2019 4:10pm - Collection page functional, live on Heroku
 
 ---
 
-Number and name of feature: Day 2 - Wishlist Page Render
+Number and name of feature: Day 2 - Wishlist Page Render  
 ​
-Estimate of time needed to complete: 30min
+Estimate of time needed to complete: 30min  
 ​
-Start time: 4:10pm
+Start time: 4:10pm  
 ​
-Finish time: 4:41pm
+Finish time: 4:41pm  
 ​
-Actual time needed to complete: 30min
+Actual time needed to complete: 30min  
 ​
 - 12-27-2019 4:42pm - Wishlist page functional, live on Heroku
 
 ---
 ​
-Number and name of feature: Day 3 - CSS design
+Number and name of feature: Day 3 - CSS design  
 ​
-Estimate of time needed to complete: 4hrs
+Estimate of time needed to complete: 4hrs  
 ​
-Start time: 9:00am
+Start time: 9:00am  
 ​
-Finish time: ____
+Finish time: ____  
 ​
-Actual time needed to complete: ____
+Actual time needed to complete: ____  
 ​
 - 12-28-2019 4:40pm - Content placed in frames, updated naming conventions
 ​
