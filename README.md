@@ -13,7 +13,6 @@ Modern browser with internet connection
 HTML, SMACSS, JS, JQUERY, AJAX, SQL, POSTMAN, HEROKU, EXPRESS, DOTENV, POSTGRES (PG), EJS, NODEMON
 ​
 ## Change Log
-​
 Number and name of feature: Day 1 - User stories, repository set up, file structure, wireframing, proof of life  
 ​
 Estimate of time needed to complete: 4 hours  
@@ -22,7 +21,7 @@ Start time: 9am
 ​
 Finish time: 1:30pm  
 ​
-Actual time needed to complete: 4.5 hours  
+Actual time needed to complete: 4.5 hours
 ​
 - 12-26-2019 9:00am - Repo set up
 - 12-26-2019 1:19pm - Proof of life functional, deployed on Heroku
@@ -37,7 +36,7 @@ Start time: 12pm
 ​
 Finish time: 3pm  
 ​
-Actual time needed to complete: 3hrs  
+Actual time needed to complete: 3hrs
 ​
 - 12-26-2019 9:00am - About Us functional, live on Heroku
 ​
@@ -51,7 +50,7 @@ Start time: 9:30am
 ​
 Finish time: 1:30pm  
 ​
-Actual time needed to complete: 4hrs  
+Actual time needed to complete: 4hrs
 ​
 - 12-27-2019 1:53am - Results page functional, live on Heroku
 ​
@@ -65,7 +64,7 @@ Start time: 1:30pm
 ​
 Finish time: 4:09pm  
 ​
-Actual time needed to complete: 2.5hrs  
+Actual time needed to complete: 2.5hrs
 ​
 - 12-27-2019 4:10pm - Collection page functional, live on Heroku
 
@@ -79,7 +78,7 @@ Start time: 4:10pm
 ​
 Finish time: 4:41pm  
 ​
-Actual time needed to complete: 30min  
+Actual time needed to complete: 30min
 ​
 - 12-27-2019 4:42pm - Wishlist page functional, live on Heroku
 
@@ -93,7 +92,7 @@ Start time: 9:00am
 ​
 Finish time: ____  
 ​
-Actual time needed to complete: ____  
+Actual time needed to complete: ____
 ​
 - 12-28-2019 4:40pm - Content placed in frames, updated naming conventions
 ​
@@ -102,13 +101,11 @@ Actual time needed to complete: ____
 Brandon Johnson, Shingo Nakajima, Peter Cole, CodeFellows 301
 ​
 ## Links
-​
 * Trello: https://trello.com/b/0b6nE6fw/deck-builder
 ​
 * Heroku: https://deck-builder-301-final.herokuapp.com
 ​
 ## User Stories
-​
 1. As a dev I want the user to search for cards so that they can expand their collection
   * Link to the API
   * Can search database
@@ -136,7 +133,6 @@ Brandon Johnson, Shingo Nakajima, Peter Cole, CodeFellows 301
   * Update database
 
 ## Sample of Data Schema
-​
 ```sql
 id SERIAL PRIMARY KEY,
 name VARCHAR(255),
@@ -151,7 +147,6 @@ tag VARCHAR(255);
 ```
 
 ## Wireframes
-​
 #### Database Entity Relationship
 ![Database Entity Relationship](https://github.com/SplinterCel3000/deck_builder/blob/master/assets/db-entity-rel.jpg)
 ​
