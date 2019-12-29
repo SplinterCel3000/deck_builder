@@ -82,6 +82,20 @@ Finish time: 4:41pm
 Actual time needed to complete: 30min
 ​
 - 12-27-2019 4:42pm - Wishlist page functional, live on Heroku
+
+## 
+​
+Number and name of feature: Day 3 - CSS design
+​
+Estimate of time needed to complete: 4hrs
+​
+Start time: 9:00am
+​
+Finish time: ____
+​
+Actual time needed to complete: ____
+​
+- 12-28-2019 4:40pm - Content placed in frames, updated naming conventions
 ​
 
 ## Credits and Collaborations
@@ -120,7 +134,22 @@ Brandon Johnson, Shingo Nakajima, Peter Cole, CodeFellows 301
   * Present user with button for deleting individually
   * Remove selected card
   * Update database
+
+## Sample of Data Schema
 ​
+```sql
+id SERIAL PRIMARY KEY,
+name VARCHAR(255),
+date VARCHAR(255),
+image_url TEXT,
+legal0 VARCHAR(255),
+legal1 VARCHAR(255),
+legal2 VARCHAR(255),
+legal3 VARCHAR(255),
+legal4 VARCHAR(255),
+tag VARCHAR(255);
+```
+
 ## Wireframes
 ​
 #### Database Entity Relationship
