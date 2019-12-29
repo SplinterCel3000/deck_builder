@@ -27,7 +27,7 @@ Actual time needed to complete: 4.5 hours
 - 12-26-2019 9:00am - Repo set up
 - 12-26-2019 1:19pm - Proof of life functional, deployed on Heroku
 ​
-## 
+---
 ​
 Number and name of feature: Day 1 - About Us page
 ​
@@ -41,7 +41,7 @@ Actual time needed to complete: 3hrs
 ​
 - 12-26-2019 9:00am - About Us functional, live on Heroku
 ​
-## 
+---
 ​
 Number and name of feature: Day 2 - Results Page Render
 ​
@@ -55,8 +55,8 @@ Actual time needed to complete: 4hrs
 ​
 - 12-27-2019 1:53am - Results page functional, live on Heroku
 ​
-## 
-​
+---
+
 Number and name of feature: Day 2 - Collection Page Render
 ​
 Estimate of time needed to complete: 3hrs
@@ -69,8 +69,8 @@ Actual time needed to complete: 2.5hrs
 ​
 - 12-27-2019 4:10pm - Collection page functional, live on Heroku
 
-## 
-​
+---
+
 Number and name of feature: Day 2 - Wishlist Page Render
 ​
 Estimate of time needed to complete: 30min
@@ -83,7 +83,7 @@ Actual time needed to complete: 30min
 ​
 - 12-27-2019 4:42pm - Wishlist page functional, live on Heroku
 
-## 
+---
 ​
 Number and name of feature: Day 3 - CSS design
 ​
