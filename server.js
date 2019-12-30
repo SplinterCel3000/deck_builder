@@ -82,7 +82,7 @@ function getCardInfo(request, response) {
 // CARD COLLECTION CALL
 
 function getCardCollection(request, response) {
-  let sql = `SELECT * FROM cardtable WHERE tag = 'collection';`;
+  let sql = `SELECT * FROM cardtable WHERE tag = 'collection' ORDER BY id DESC;`;
 
   client.query(sql)
     .then(results => {
@@ -97,7 +97,7 @@ function getCardCollection(request, response) {
 // CARD WISHLIST CALL
 
 function getCardWishlist(request, response) {
-  let sql = `SELECT * FROM cardtable WHERE tag = 'wishlist';`;
+  let sql = `SELECT * FROM cardtable WHERE tag = 'wishlist' ORDER BY id DESC;`;
 
   client.query(sql)
     .then(results => {

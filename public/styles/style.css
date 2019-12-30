@@ -1,6 +1,11 @@
+@font-face{
+  font-family: 'MAGIC';
+  src: url('./fonts/MAGIC.TTF');
+}
+
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'MAGIC';
   background-color: rgb(188, 188, 188);
   display: flex;
   align-items: center;
@@ -29,9 +34,22 @@ body {
   font-size: 18px;
 }
 
+button {
+  background-color: rgb(255, 157, 0);
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'MAGIC';
+  font-size: 18px;
+}
+
 /* peter - aesthetic addition */
 .search-bar-contents {
-  font-size: 14px;
+  font-family: 'MAGIC';
+  font-size: 18px;
 }
 
 .motto{
@@ -42,7 +60,7 @@ body {
   font-size: 20px;
   text-align: center;
   color: black;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'MAGIC';
 }
 
 .github-logo {
