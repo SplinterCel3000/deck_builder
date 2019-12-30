@@ -98,7 +98,8 @@ Actual time needed to complete: ____
 ​
 
 ## Credits and Collaborations
-Brandon Johnson, Shingo Nakajima, Peter Cole, CodeFellows 301
+Brandon Johnson, Shingo Nakajima, Peter Cole, CodeFellows 301  
+Orange CSS buttons inspired from https://www.w3schools.com/csS/css3_buttons.asp
 ​
 ## Links
 * Trello: https://trello.com/b/0b6nE6fw/deck-builder
