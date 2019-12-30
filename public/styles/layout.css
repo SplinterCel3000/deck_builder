@@ -1,0 +1,41 @@
+/* peter - aesthetic addition */
+.frame {
+  margin: 40px;
+  width: max-content;
+  padding: 10px 60px 30px;
+  background-color:#f2f2f2;
+  box-shadow: 1px 2px 5px 2px #595959;
+  text-align: center;
+}
+
+/* peter - aesthetic addition */
+.nav-button {
+  background-color: rgb(255, 157, 0);
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
+
+button {
+  background-color: rgb(255, 157, 0);
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'MAGIC';
+  font-size: 18px;
+}
+
+/* peter - aesthetic addition */
+.search-bar-contents {
+  font-family: 'MAGIC';
+  font-size: 18px;
+}
+
+
