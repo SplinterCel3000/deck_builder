@@ -1,5 +1,10 @@
 
 /* *************************************ABOUT US************************************** */
+
+h1 {
+  font-size: 36px;
+}
+
 .readable {
   font-family: Arial, Helvetica, sans-serif;
 }
