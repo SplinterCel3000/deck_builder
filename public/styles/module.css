@@ -1,0 +1,42 @@
+
+/* *************************************ABOUT US************************************** */
+
+.flex{
+  display: flex;
+  flex-direction: column;
+}
+
+.motto{
+  font-style: oblique;
+}
+
+.dev-content {
+  font-size: 20px;
+  color: black;
+  font-family: 'MAGIC';
+}
+
+.github-logo {
+  max-width:10%;
+  max-height: 10%;
+  padding: 10px;
+}
+
+.devs{
+  font-style: bold;
+  font-size: 18px;
+}
+
+.bold-name{
+  font-weight: bold;
+}
+
+.profile-img{
+padding:10px;
+}
+
+.pic{
+  max-width:25%;
+  max-height: 25%;
+}
+

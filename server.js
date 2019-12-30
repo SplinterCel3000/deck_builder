@@ -1,6 +1,10 @@
 'use strict';
 
-// LINK DATABASE TO HEROKU
+// Directory:
+//  Requirements and Const Declarations
+//  Routes
+//  Page Rendering
+
 
 const express = require('express');
 const app = express();
@@ -10,7 +14,7 @@ require('dotenv').config();
 const pg = require('pg');
 const client = new pg.Client(process.env.DATABASE_URL);
 const superagent = require('superagent');
-// const methodOverride = require('method-override');
+const methodOverride = require('method-override');
 
 const PORT = process.env.PORT || 3001;
 
@@ -21,7 +25,7 @@ client.on('error', (error) => console.log(error));
 app.set('view engine', 'ejs');
 app.use(express.static('./public'));
 app.use(express.urlencoded());
-// app.use(methodOverride('_method'));
+app.use(methodOverride('_method'));
 
 // ROUTES
 
@@ -39,6 +43,26 @@ app.post('/collection', addCardCollection);
 app.get('/wish-list', getCardWishlist);
 app.post('/wish-list', addCardWishlist);
 
+app.put('/update', updateCard);
+
+// PAGE RENDERING
+
+function indexRender(request, response) {
+  response.render('pages/index');
+}
+
+function aboutUsRender(request, response) {
+  response.render('pages/about-us');
+}
+
+function resultsRender(request, response) {
+  response.render('pages/results');
+}
+
+function errorRender(request, response) {
+  response.render('pages/error');
+}
+
 // RESULTS PAGE RENDER from API
 
 function getCardInfo(request, response) {
@@ -49,91 +73,87 @@ function getCardInfo(request, response) {
 
   superagent.get(url)
     .then(res => {
-      let cardArray = res.body.data.map(card => {
-        return new Cards(card);
+      let resultsArray = res.body.data.map(cardData => {
+        return new NewCard(cardData);
       });
       let totalCardCount = (res.body.total_cards);
-      response.render('pages/results', { cardArray: cardArray, totalCardCount: totalCardCount });
+      response.render('pages/results', { resultsArray: resultsArray, totalCardCount: totalCardCount });
     })
     .catch(error => {
-      console.log(error);
-      response.render('pages/error');
+      console.log(`results page error: ${error}`);
+      response.render('pages/error', { error: error });
     })
 }
 
-// PAGE RENDER
-
-function indexRender(request, response) {
-  response.render('./pages/index');
-}
-
-function aboutUsRender(request, response) {
-  response.render('./pages/about-us');
-}
-
-function resultsRender(request, response) {
-  response.render('./pages/results');
-}
-
-function errorRender(request, response) {
-  response.render('./pages/error');
-}
-
-// CARD COLLECTION CALL
+// CARD WITH COLLECTION TAG CALL FROM DATABASE
 
 function getCardCollection(request, response) {
-  let sql = `SELECT * FROM collection WHERE tag = 'collection';`;
+  let sql = `SELECT * FROM cardtable WHERE tag = 'collection' ORDER BY id DESC;`;
 
   client.query(sql)
     .then(results => {
-      response.render('pages/collection', { cardArrCollection: results.rows });
+      response.render('pages/collection', { collectionArray: results.rows });
     })
+    .catch(error => {
+      console.log(`card collection error: ${error}`);
+      response.render('pages/error', { error: error });
+    })
+}
 
-    .catch((error) => console.log(error));
+// CARD WITH WISHLIST TAG CALL FROM DATABASE
+
+function getCardWishlist(request, response) {
+  let sql = `SELECT * FROM cardtable WHERE tag = 'wishlist' ORDER BY id DESC;`;
+
+  client.query(sql)
+    .then(results => {
+      response.render('pages/wish-list', { wishlistArray: results.rows });
+    })
+    .catch(error => {
+      console.log(`card wishlist error: ${error}`);
+      response.render('pages/error', { error: error });
+    })
 }
 
 // ADD CARD TO COLLECTION
 
 function addCardCollection(request, response) {
   let { name, date, image_url, legal0, legal1, legal2, legal3, legal4, tag } = request.body;
-  let sql = 'INSERT INTO collection (name, date, image_url, legal0, legal1, legal2, legal3, legal4, tag) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9);';
+  let sql = 'INSERT INTO cardtable (name, date, image_url, legal0, legal1, legal2, legal3, legal4, tag) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9);';
   let safeValues = [name, date, image_url, legal0, legal1, legal2, legal3, legal4, tag];
   client.query(sql, safeValues);
   response.redirect('/collection');
-}
-
-// CARD WISHLIST CALL
-
-function getCardWishlist(request, response) {
-  let sql = `SELECT * FROM collection WHERE tag = 'wishlist';`;
-
-  client.query(sql)
-    .then(results => {
-      response.render('pages/wish-list', { cardArrwishlist: results.rows });
-    })
-
-    .catch((error) => console.log(error));
 }
 
 // ADD CARD TO WISHLIST
 
 function addCardWishlist(request, response) {
   let { name, date, image_url, legal0, legal1, legal2, legal3, legal4, tag } = request.body;
-  let sql = 'INSERT INTO collection (name, date, image_url, legal0, legal1, legal2, legal3, legal4, tag) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9);';
+  let sql = 'INSERT INTO cardtable (name, date, image_url, legal0, legal1, legal2, legal3, legal4, tag) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9);';
   let safeValues = [name, date, image_url, legal0, legal1, legal2, legal3, legal4, tag];
   client.query(sql, safeValues);
   response.redirect('/wish-list');
 }
 
+// UPDATE CARD FROM WISHLIST TO COLLECTION
+
+function updateCard(request, response) {
+  let {name} = request.body;
+  let sql = `UPDATE cardtable SET tag='collection' WHERE name=$1;`;
+  let safeValues = [name];
+  client.query(sql, safeValues);
+  response.redirect('/collection');
+}
+
 // ERROR
 
 app.use('*', (request, response) => {
-  response.status(404).send('Page Not Found');
+  response.status(404).send('ERR 404: Page Not Found');
 });
 
 // CONSTRUCTOR FOR CARDS
 
-function Cards(cardObj) {
+function NewCard(cardObj) {
   this.name = cardObj.name || 'no name available';
   this.date = cardObj.released_at || 'no release date available';
   this.image_url = cardObj.image_uris ? (cardObj.image_uris.normal ? cardObj.image_uris.normal : (cardObj.image_uris.png ? cardObj.image_uris.png : placeHolderImage)) : placeHolderImage;
