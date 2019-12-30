@@ -1,6 +1,10 @@
 'use strict';
 
-// LINK DATABASE TO HEROKU
+// Directory:
+//  Requirements and Const Declarations
+//  Routes
+//  Page Rendering
+
 
 const express = require('express');
 const app = express();
@@ -10,7 +14,7 @@ require('dotenv').config();
 const pg = require('pg');
 const client = new pg.Client(process.env.DATABASE_URL);
 const superagent = require('superagent');
-// const methodOverride = require('method-override');
+const methodOverride = require('method-override');
 
 const PORT = process.env.PORT || 3001;
 
@@ -21,7 +25,7 @@ client.on('error', (error) => console.log(error));
 app.set('view engine', 'ejs');
 app.use(express.static('./public'));
 app.use(express.urlencoded());
-// app.use(methodOverride('_method'));
+app.use(methodOverride('_method'));
 
 // ROUTES
 
@@ -39,7 +43,9 @@ app.post('/collection', addCardCollection);
 app.get('/wish-list', getCardWishlist);
 app.post('/wish-list', addCardWishlist);
 
-// PAGE RENDER
+app.put('/update', updateCard);
+
+// PAGE RENDERING
 
 function indexRender(request, response) {
   response.render('pages/index');
@@ -79,7 +85,7 @@ function getCardInfo(request, response) {
     })
 }
 
-// CARD COLLECTION CALL
+// CARD WITH COLLECTION TAG CALL FROM DATABASE
 
 function getCardCollection(request, response) {
   let sql = `SELECT * FROM cardtable WHERE tag = 'collection' ORDER BY id DESC;`;
@@ -94,7 +100,7 @@ function getCardCollection(request, response) {
     })
 }
 
-// CARD WISHLIST CALL
+// CARD WITH WISHLIST TAG CALL FROM DATABASE
 
 function getCardWishlist(request, response) {
   let sql = `SELECT * FROM cardtable WHERE tag = 'wishlist' ORDER BY id DESC;`;
@@ -127,6 +133,16 @@ function addCardWishlist(request, response) {
   let safeValues = [name, date, image_url, legal0, legal1, legal2, legal3, legal4, tag];
   client.query(sql, safeValues);
   response.redirect('/wish-list');
+}
+
+// UPDATE CARD FROM WISHLIST TO COLLECTION
+
+function updateCard(request, response) {
+  let {name} = request.body;
+  let sql = `UPDATE cardtable SET tag='collection' WHERE name=$1;`;
+  let safeValues = [name];
+  client.query(sql, safeValues);
+  response.redirect('/collection');
 }
 
 // ERROR
