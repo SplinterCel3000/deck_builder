@@ -39,6 +39,24 @@ app.post('/collection', addCardCollection);
 app.get('/wish-list', getCardWishlist);
 app.post('/wish-list', addCardWishlist);
 
+// PAGE RENDER
+
+function indexRender(request, response) {
+  response.render('pages/index');
+}
+
+function aboutUsRender(request, response) {
+  response.render('pages/about-us');
+}
+
+function resultsRender(request, response) {
+  response.render('pages/results');
+}
+
+function errorRender(request, response) {
+  response.render('pages/error');
+}
+
 // RESULTS PAGE RENDER from API
 
 function getCardInfo(request, response) {
@@ -49,77 +67,63 @@ function getCardInfo(request, response) {
 
   superagent.get(url)
     .then(res => {
-      let cardArray = res.body.data.map(card => {
-        return new Cards(card);
+      let resultsArray = res.body.data.map(cardData => {
+        return new NewCard(cardData);
       });
       let totalCardCount = (res.body.total_cards);
-      response.render('pages/results', { cardArray: cardArray, totalCardCount: totalCardCount });
+      response.render('pages/results', { resultsArray: resultsArray, totalCardCount: totalCardCount });
     })
     .catch(error => {
-      console.log(error);
-      response.render('pages/error');
+      console.log(`results page error: ${error}`);
+      response.render('pages/error', { error: error });
     })
-}
-
-// PAGE RENDER
-
-function indexRender(request, response) {
-  response.render('./pages/index');
-}
-
-function aboutUsRender(request, response) {
-  response.render('./pages/about-us');
-}
-
-function resultsRender(request, response) {
-  response.render('./pages/results');
-}
-
-function errorRender(request, response) {
-  response.render('./pages/error');
 }
 
 // CARD COLLECTION CALL
 
 function getCardCollection(request, response) {
-  let sql = `SELECT * FROM collection WHERE tag = 'collection';`;
+  let sql = `SELECT * FROM cardtable WHERE tag = 'collection';`;
 
   client.query(sql)
     .then(results => {
-      response.render('pages/collection', { cardArrCollection: results.rows });
+      response.render('pages/collection', { collectionArray: results.rows });
     })
+    .catch(error => {
+      console.log(`card collection error: ${error}`);
+      response.render('pages/error', { error: error });
+    })
+}
 
-    .catch((error) => console.log(error));
+// CARD WISHLIST CALL
+
+function getCardWishlist(request, response) {
+  let sql = `SELECT * FROM cardtable WHERE tag = 'wishlist';`;
+
+  client.query(sql)
+    .then(results => {
+      response.render('pages/wish-list', { wishlistArray: results.rows });
+    })
+    .catch(error => {
+      console.log(`card wishlist error: ${error}`);
+      response.render('pages/error', { error: error });
+    })
 }
 
 // ADD CARD TO COLLECTION
 
 function addCardCollection(request, response) {
   let { name, date, image_url, legal0, legal1, legal2, legal3, legal4, tag } = request.body;
-  let sql = 'INSERT INTO collection (name, date, image_url, legal0, legal1, legal2, legal3, legal4, tag) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9);';
+  let sql = 'INSERT INTO cardtable (name, date, image_url, legal0, legal1, legal2, legal3, legal4, tag) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9);';
   let safeValues = [name, date, image_url, legal0, legal1, legal2, legal3, legal4, tag];
   client.query(sql, safeValues);
   response.redirect('/collection');
-}
-
-// CARD WISHLIST CALL
-
-function getCardWishlist(request, response) {
-  let sql = `SELECT * FROM collection WHERE tag = 'wishlist';`;
-
-  client.query(sql)
-    .then(results => {
-      response.render('pages/wish-list', { cardArrwishlist: results.rows });
-    })
-
-    .catch((error) => console.log(error));
 }
 
 // ADD CARD TO WISHLIST
 
 function addCardWishlist(request, response) {
   let { name, date, image_url, legal0, legal1, legal2, legal3, legal4, tag } = request.body;
-  let sql = 'INSERT INTO collection (name, date, image_url, legal0, legal1, legal2, legal3, legal4, tag) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9);';
+  let sql = 'INSERT INTO cardtable (name, date, image_url, legal0, legal1, legal2, legal3, legal4, tag) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9);';
   let safeValues = [name, date, image_url, legal0, legal1, legal2, legal3, legal4, tag];
   client.query(sql, safeValues);
   response.redirect('/wish-list');
@@ -128,12 +132,12 @@ function addCardWishlist(request, response) {
 // ERROR
 
 app.use('*', (request, response) => {
-  response.status(404).send('Page Not Found');
+  response.status(404).send('ERR 404: Page Not Found');
 });
 
 // CONSTRUCTOR FOR CARDS
 
-function Cards(cardObj) {
+function NewCard(cardObj) {
   this.name = cardObj.name || 'no name available';
   this.date = cardObj.released_at || 'no release date available';
   this.image_url = cardObj.image_uris ? (cardObj.image_uris.normal ? cardObj.image_uris.normal : (cardObj.image_uris.png ? cardObj.image_uris.png : placeHolderImage)) : placeHolderImage;

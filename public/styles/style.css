@@ -1,23 +1,53 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(164, 164, 164);
+  background-color: rgb(188, 188, 188);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+/* peter - aesthetic addition */
+.frame {
+  margin: 40px;
+  width: max-content;
+  padding: 10px 60px 30px;
+  background-color:#f2f2f2;
+  box-shadow: 1px 2px 5px 2px #595959;
+  text-align: center;
+}
+
+/* peter - aesthetic addition */
+.nav-button {
+  background-color: rgb(255, 157, 0);
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
+
+/* peter - aesthetic addition */
+.search-bar-contents {
+  font-size: 14px;
 }
 
 .motto{
   font-style: oblique;
 }
+
 .dev-content {
-    font-size: 20px;
-    text-align: center;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-  }
+  font-size: 20px;
+  text-align: center;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 .github-logo {
   max-width: 80px;
-  padding: 20px;
+  padding: 0px;
 }
 
 .devs{
@@ -49,7 +79,7 @@ body {
   perspective: 1000px;
 }
 
-  /* flip the pane when hovered */
+/* flip the pane when hovered */
 .flip-container:hover .flipper, .flip-container.hover .flipper {
   transform: rotateY(180deg);
 }
@@ -88,7 +118,7 @@ body {
 }
 
 /* back, initially hidden pane */
- .back {
+.back {
   transform: rotateY(180deg);
   height: 100px;
   position: absolute;
@@ -101,7 +131,7 @@ body {
 /************************************* BRANDON *******************************************/
 
 /* hide back of pane during swap */
- .front-brandon, .back-brandon {
+.front-brandon, .back-brandon {
   backface-visibility: hidden;
   position: absolute;
   top: 400px;
@@ -132,7 +162,7 @@ body {
 /************************************* SHINGO *******************************************/
 
 /* hide back of pane during swap */
- .front-shingo, .back-shingo {
+.front-shingo, .back-shingo {
   backface-visibility: hidden;
   position: absolute;
   top: 400px;

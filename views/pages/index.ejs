@@ -10,18 +10,24 @@
 </head>
 
 <body>
-  <h1>Deck Builder</h1>
-  <p>Keep track of your Magic the Gathering collection! <br>
-    Save cards to your own collection as well as keeping track of cards you want in the future.</p>
-  <a href="/collection" target="_self">Collection <br></a>
-  <a href="/wish-list" target="_self">Wish List<br></a>
-  <a href="/about-us" target="_self">About Us<br></a>
+  <div class="frame">
+    <!-- peter - aesthetic addition -->
+    <h1>Deck Builder</h1>
+    <p>Keep track of your <i>Magic the Gathering</i>™ cards!</p>
+    <p>Search the entire library<br>
+      Save cards that you own to your collection<br>
+      Save cards you want in the future to a wish list</p>
+    <br>
+    <form action='/results' method='post'>
+      <input class="search-bar-contents" type="text" name="search" placeholder="Enter a card name" autofocus required>
+      <button class="search-bar-contents" type="submit">Search</button>
+    </form>
+    <br>
+    <a class="nav-button" href="/collection" target="_self">Collection</a>
+    <a class="nav-button" href="/wish-list" target="_self">Wish List</a>
+    <a class="nav-button" href="/about-us" target="_self">About Us</a>
 
-  <form action='/results' method='post'>
-    <input type="text" name="search" placeholder="Enter a card name" required>
-    <button type="submit"> Search </button>
-  </form>
-
+  </div>
 
   <script src="./js/app.js"></script>
 </body>
