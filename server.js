@@ -1,11 +1,5 @@
 'use strict';
 
-// Directory:
-//  Requirements and Const Declarations
-//  Routes
-//  Page Rendering
-
-
 const express = require('express');
 const app = express();
 require('ejs');
@@ -44,6 +38,8 @@ app.get('/wish-list', getCardWishlist);
 app.post('/wish-list', addCardWishlist);
 
 app.put('/update', updateCard);
+app.delete('/deleteWishList', deleteCardWishList);
+app.delete('/deleteCollection', deleteCardCollection);
 
 // PAGE RENDERING
 
@@ -138,11 +134,31 @@ function addCardWishlist(request, response) {
 // UPDATE CARD FROM WISHLIST TO COLLECTION
 
 function updateCard(request, response) {
-  let {name} = request.body;
+  let { name } = request.body;
   let sql = `UPDATE cardtable SET tag='collection' WHERE name=$1;`;
   let safeValues = [name];
   client.query(sql, safeValues);
   response.redirect('/collection');
+}
+
+// DELETE CARD FROM WISHLIST
+
+function deleteCardWishList(request, response){
+  let { name } = request.body;
+  let sql = 'DELETE FROM cardtable WHERE name=$1;';
+  let safeValues = [name];
+  client.query(sql, safeValues);
+  response.redirect('/wish-list')
+}
+
+// DELETE CARD FROM COLLECTION
+
+function deleteCardCollection(request, response){
+  let {name} = request.body;
+  let sql = 'DELETE FROM cardtable WHERE name=$1;';
+  let safeValues = [name];
+  client.query(sql, safeValues);
+  response.redirect('/collection')
 }
 
 // ERROR

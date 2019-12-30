@@ -36,6 +36,14 @@
         <input type="hidden" name="name" value="<%= card.name %>"></input>
         <button class="nav-button" type="submit">Add Card to Collection</button>
       </form>
+      <br>
+
+      <!-- DELETE FROM WISH LIST -->
+
+      <form action="<%= `/deleteWishList?_method=DELETE` %>" method="POST">
+        <input type="hidden" name="name" value="<%= card.name %>"></input>
+        <button class="nav-button" type="submit">Delete Card from Wish List</button>
+      </form>
       <hr><br>
     </div>
     <% }) %>
