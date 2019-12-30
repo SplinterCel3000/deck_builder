@@ -1,5 +1,8 @@
 
 /* *************************************ABOUT US************************************** */
+.readable {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 .flex{
   display: flex;
@@ -17,9 +20,11 @@
 }
 
 .github-logo {
-  max-width:10%;
-  max-height: 10%;
-  padding: 10px;
+  max-width:2%;
+  max-height: 2%;
+  
+  
+  
 }
 
 .devs{
@@ -29,6 +34,7 @@
 
 .bold-name{
   font-weight: bold;
+  display: inline;
 }
 
 .profile-img{
