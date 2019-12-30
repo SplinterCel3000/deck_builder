@@ -10,7 +10,7 @@ Using the Skryfall API, query a deck building app that allows the tracking of de
 Modern browser with internet connection
 ​
 ## Architecture
-HTML, SMACSS, JS, JQUERY, AJAX, SQL, POSTMAN, HEROKU, EXPRESS, DOTENV, POSTGRES (PG), EJS, NODEMON
+HTML, SMACSS, JS, JQUERY, AJAX, SQL, POSTMAN, HEROKU, EXPRESS, DOTENV, POSTGRES (PG), EJS, NODEMON, METHODOVERRIDE
 ​
 ## Change Log
 Number and name of feature: Day 1 - User stories, repository set up, file structure, wireframing, proof of life  
@@ -95,9 +95,22 @@ Finish time: ____
 Actual time needed to complete: ____
 ​
 - 12-28-2019 4:40pm - Content placed in frames, updated naming conventions
-- 12-29-2019 9:55am - Added Magic Font, fixed buttons
-​
+- 12-30-2019 9:55am - Added Magic Font, fixed buttons
 
+---
+
+Number and name of feature: Day 4 - Update & Delete Methods  
+​
+Estimate of time needed to complete: 2hrs  
+​
+Start time: 10:11am  
+​
+Finish time: ____  
+​
+Actual time needed to complete: ____
+​ 
+- 12-30-2019 11:07am - Update button functional
+​
 ## Credits and Collaborations
 Brandon Johnson, Shingo Nakajima, Peter Cole, CodeFellows 301  
 Orange CSS buttons inspired from https://www.w3schools.com/csS/css3_buttons.asp
