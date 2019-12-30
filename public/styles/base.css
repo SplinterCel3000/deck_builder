@@ -1,0 +1,13 @@
+@font-face{
+  font-family: 'MAGIC';
+  src: url('./fonts/MAGIC.TTF');
+}
+
+
+body {
+  font-family: 'MAGIC';
+  background-color: rgb(188, 188, 188);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
