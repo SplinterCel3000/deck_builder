@@ -1,4 +1,4 @@
-/* peter - aesthetic addition */
+
 .frame {
   margin: 40px;
   width: max-content;
@@ -8,19 +8,7 @@
   text-align: center;
 }
 
-/* peter - aesthetic addition */
 .nav-button {
-  background-color: rgb(255, 157, 0);
-  border: none;
-  color: white;
-  padding: 8px 16px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
-}
-
-button {
   background-color: rgb(255, 157, 0);
   border: none;
   color: white;
@@ -32,7 +20,18 @@ button {
   font-size: 18px;
 }
 
-/* peter - aesthetic addition */
+.delete-button {
+  background-color: rgb(207, 10, 10);
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'MAGIC';
+  font-size: 18px;
+}
+
 .search-bar-contents {
   font-family: 'MAGIC';
   font-size: 18px;
