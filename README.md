@@ -106,11 +106,12 @@ Estimate of time needed to complete: 2hrs
 ​
 Start time: 10:11am  
 ​
-Finish time: ____  
+Finish time: 11:47am  
 ​
-Actual time needed to complete: ____
+Actual time needed to complete: 1.5hrs
 ​ 
 - 12-30-2019 11:07am - Update button functional
+- 12-30-2019 11:47am - Delete button functional
 ​
 ## Credits and Collaborations
 Brandon Johnson, Shingo Nakajima, Peter Cole, CodeFellows 301  
