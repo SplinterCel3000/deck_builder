@@ -95,6 +95,7 @@ Finish time: ____
 Actual time needed to complete: ____
 ​
 - 12-28-2019 4:40pm - Content placed in frames, updated naming conventions
+- 12-29-2019 9:55am - Added Magic Font, fixed buttons
 ​
 
 ## Credits and Collaborations
