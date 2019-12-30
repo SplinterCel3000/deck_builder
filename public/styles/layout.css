@@ -37,4 +37,14 @@
   font-size: 18px;
 }
 
-
+#search-button {
+  background-color: rgb(255, 157, 0);
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'MAGIC';
+  font-size: 18px;
+}

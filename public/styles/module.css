@@ -4,10 +4,6 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.readable {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
 .flex {
   display: flex;
   flex-direction: column;
@@ -26,27 +22,23 @@
 .github-logo {
   max-width:2%;
   max-height: 2%;
-  
-  
-  
 }
 
-.devs{
+.devs {
   font-style: bold;
   font-size: 18px;
 }
 
-.bold-name{
+.bold-name {
   font-weight: bold;
   display: inline;
 }
 
-.profile-img{
+.profile-img {
 padding:10px;
 }
 
-.pic{
+.pic {
   max-width:25%;
   max-height: 25%;
 }
-
