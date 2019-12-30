@@ -38,8 +38,8 @@ app.get('/wish-list', getCardWishlist);
 app.post('/wish-list', addCardWishlist);
 
 app.put('/update', updateCard);
-app.delete('/deleteWishList', deleteCardWishList);
-app.delete('/deleteCollection', deleteCardCollection);
+app.delete('/delete', deleteCard);
+app.delete('/deleteAll', deleteAllFromTag);
 
 // PAGE RENDERING
 
@@ -141,24 +141,28 @@ function updateCard(request, response) {
   response.redirect('/collection');
 }
 
-// DELETE CARD FROM WISHLIST
+// DELETE CARD FROM WISHLIST OR COLLECTION
 
-function deleteCardWishList(request, response){
+function deleteCard(request, response) {
   let { name } = request.body;
   let sql = 'DELETE FROM cardtable WHERE name=$1;';
   let safeValues = [name];
   client.query(sql, safeValues);
-  response.redirect('/wish-list')
+  let path = '/error';
+  request.body === '/wishlist' ? path = '/wish-list' : path = '/collection';
+  response.redirect(path);
 }
 
-// DELETE CARD FROM COLLECTION
+// DELETE ALL WISHLIST OR COLLECTION
 
-function deleteCardCollection(request, response){
-  let {name} = request.body;
-  let sql = 'DELETE FROM cardtable WHERE name=$1;';
-  let safeValues = [name];
+function deleteAllFromTag(request, response) {
+  let { tag } = request.body;
+  let sql = 'DELETE FROM cardtable WHERE tag=$1;';
+  let safeValues = [tag];
   client.query(sql, safeValues);
-  response.redirect('/collection')
+  let path = '/error';
+  request.body === '/wishlist' ? path = '/wish-list' : path = '/collection';
+  response.redirect(path);
 }
 
 // ERROR
