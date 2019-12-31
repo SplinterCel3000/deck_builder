@@ -1,6 +1,6 @@
 # Deck Builder App
 ​
-**Authors**: Brandon Johnson, Shingo Nakajima, Peter Cole
+**Authors**: Brandon Johnson, Shingo Nakajima, Peter Cole  
 **Version**: 3.2.0 Functional CRUD
 ​
 ## Overview
@@ -95,9 +95,7 @@ Finish time: ____
 Actual time needed to complete: ____
 ​
 - 12-28-2019 4:40pm - Content placed in frames, updated naming conventions
-
 - 12-29-2019 9:55am - Added Magic Font, fixed buttons
-- 12-30-2019 9:55am - Added Magic Font, fixed buttons
 - 12-30-2019 10:30am - SMACCSified style.css into base, layout, module
 
 ---

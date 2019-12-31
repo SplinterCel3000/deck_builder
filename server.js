@@ -59,12 +59,11 @@ function errorRender(request, response) {
   response.render('pages/error');
 }
 
-// RESULTS PAGE RENDER from API
+// RESULTS PAGE RENDER FROM API
 
 function getCardInfo(request, response) {
   let url = 'https://api.scryfall.com/cards/search?q=';
   let searchCriteria = request.body.search;
-
   url += searchCriteria;
 
   superagent.get(url)
@@ -98,15 +97,17 @@ function getCardCollection(request, response) {
 
 // CARD WITH WISHLIST TAG CALL FROM DATABASE
 
+// && name="%INPUT_STR%"
+
 function getCardWishlist(request, response) {
-  let sql = `SELECT * FROM cardtable WHERE tag = 'wishlist' ORDER BY id DESC;`;
+  let sql = `SELECT * FROM cardtable WHERE tag = 'wish-list'ORDER BY id DESC;`;
 
   client.query(sql)
     .then(results => {
       response.render('pages/wish-list', { wishlistArray: results.rows });
     })
     .catch(error => {
-      console.log(`card wishlist error: ${error}`);
+      console.log(`card wish-list error: ${error}`);
       response.render('pages/error', { error: error });
     })
 }
@@ -149,7 +150,8 @@ function deleteCard(request, response) {
   let safeValues = [name];
   client.query(sql, safeValues);
   let path = '/error';
-  request.body === '/wishlist' ? path = '/wish-list' : path = '/collection';
+  console.log(request.body);
+  request.body.tag === 'wish-list' ? path = '/wish-list' : path = '/collection';
   response.redirect(path);
 }
 
@@ -160,10 +162,17 @@ function deleteAllFromTag(request, response) {
   let sql = 'DELETE FROM cardtable WHERE tag=$1;';
   let safeValues = [tag];
   client.query(sql, safeValues);
+  console.log(request.body);
   let path = '/error';
-  request.body === '/wishlist' ? path = '/wish-list' : path = '/collection';
+  request.body.tag === 'wish-list' ? path = '/wish-list' : path = '/collection';
   response.redirect(path);
 }
+
+// SOFT SEARCH ON WISHLIST OR COLLECTION
+
+// function softSearchByName(request, body) {
+
+// }
 
 // ERROR
 
@@ -171,7 +180,7 @@ app.use('*', (request, response) => {
   response.status(404).send('ERR 404: Page Not Found');
 });
 
-// CONSTRUCTOR FOR CARDS
+// CONSTRUCTOR FOR CARDS w/ UNDERSCORE CLEANER FUNCTION
 
 function NewCard(cardObj) {
   this.name = cardObj.name || 'no name available';
