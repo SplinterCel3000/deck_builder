@@ -1,7 +1,7 @@
 # Deck Builder App
 ​
 **Authors**: Brandon Johnson, Shingo Nakajima, Peter Cole
-**Version**: 2.3.0 Functional Collection & Wishlist from Database
+**Version**: 3.2.0 Functional CRUD
 ​
 ## Overview
 Using the Skryfall API, query a deck building app that allows the tracking of desired and acquired cards.
@@ -102,7 +102,7 @@ Actual time needed to complete: ____
 
 ---
 
-Number and name of feature: Day 4 - Update & Delete Methods  
+Number and name of feature: Day 3 - Update & Delete Methods  
 ​
 Estimate of time needed to complete: 2hrs  
 ​
