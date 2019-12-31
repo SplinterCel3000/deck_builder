@@ -97,8 +97,8 @@ Actual time needed to complete: ____
 - 12-28-2019 4:40pm - Content placed in frames, updated naming conventions
 
 - 12-29-2019 9:55am - Added Magic Font, fixed buttons
-- 12-29-2019 10:30am - SMACCSified style.css into base, layout, module
 - 12-30-2019 9:55am - Added Magic Font, fixed buttons
+- 12-30-2019 10:30am - SMACCSified style.css into base, layout, module
 
 Number and name of feature: Day 4 - Update & Delete Methods  
 ​
@@ -111,11 +111,12 @@ Finish time: 11:47am
 Actual time needed to complete: 1.5hrs
 ​ 
 - 12-30-2019 11:07am - Update button functional
-- 12-30-2019 11:47am - Delete button functional
+- 12-30-2019 11:47am - Delete card button functional
+- 12-30-2019 3:59pm - Delete collection or wishlist functional
 ​
 ## Credits and Collaborations
 Brandon Johnson, Shingo Nakajima, Peter Cole, CodeFellows 301  
-Orange CSS buttons inspired from https://www.w3schools.com/csS/css3_buttons.asp
+CSS buttons inspired from https://www.w3schools.com/csS/css3_buttons.asp
 ​
 ## Links
 * Trello: https://trello.com/b/0b6nE6fw/deck-builder
