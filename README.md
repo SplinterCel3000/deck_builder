@@ -10,7 +10,7 @@ Using the Skryfall API, query a deck building app that allows the tracking of de
 Modern browser with internet connection
 ​
 ## Architecture
-HTML, SMACSS, JS, JQUERY, AJAX, SQL, POSTMAN, HEROKU, EXPRESS, DOTENV, POSTGRES (PG), EJS, NODEMON, METHODOVERRIDE
+HTML, SMACSS, JS, JQUERY, AJAX, SQL, POSTMAN, HEROKU, EXPRESS, DOTENV, POSTGRES (PG), EJS, NODEMON, METHOD-OVERRIDE
 ​
 ## Change Log
 Number and name of feature: Day 1 - User stories, repository set up, file structure, wireframing, proof of life  
@@ -99,6 +99,8 @@ Actual time needed to complete: ____
 - 12-29-2019 9:55am - Added Magic Font, fixed buttons
 - 12-30-2019 9:55am - Added Magic Font, fixed buttons
 - 12-30-2019 10:30am - SMACCSified style.css into base, layout, module
+
+---
 
 Number and name of feature: Day 4 - Update & Delete Methods  
 ​
