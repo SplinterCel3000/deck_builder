@@ -34,6 +34,8 @@ app.post('/results', getCardInfo);
 app.get('/collection', getCardCollection);
 app.post('/collection', addCardCollection);
 
+// app.get('/collection', softSearchByName)
+
 app.get('/wish-list', getCardWishlist);
 app.post('/wish-list', addCardWishlist);
 
@@ -72,7 +74,7 @@ function getCardInfo(request, response) {
         return new NewCard(cardData);
       });
       let totalCardCount = (res.body.total_cards);
-      response.render('pages/results', { resultsArray: resultsArray, totalCardCount: totalCardCount });
+      response.render('pages/results', { resultsArray: resultsArray, totalCardCount: totalCardCount , searchCriteria: searchCriteria});
     })
     .catch(error => {
       console.log(`results page error: ${error}`);
@@ -92,15 +94,13 @@ function getCardCollection(request, response) {
     .catch(error => {
       console.log(`card collection error: ${error}`);
       response.render('pages/error', { error: error });
-    })
+    });
 }
 
 // CARD WITH WISHLIST TAG CALL FROM DATABASE
 
-// && name="%INPUT_STR%"
-
 function getCardWishlist(request, response) {
-  let sql = `SELECT * FROM cardtable WHERE tag = 'wish-list'ORDER BY id DESC;`;
+  let sql = `SELECT * FROM cardtable WHERE tag = 'wish-list' ORDER BY id DESC;`;
 
   client.query(sql)
     .then(results => {
@@ -109,7 +109,7 @@ function getCardWishlist(request, response) {
     .catch(error => {
       console.log(`card wish-list error: ${error}`);
       response.render('pages/error', { error: error });
-    })
+    });
 }
 
 // ADD CARD TO COLLECTION
@@ -150,7 +150,6 @@ function deleteCard(request, response) {
   let safeValues = [name];
   client.query(sql, safeValues);
   let path = '/error';
-  console.log(request.body);
   request.body.tag === 'wish-list' ? path = '/wish-list' : path = '/collection';
   response.redirect(path);
 }
@@ -162,7 +161,6 @@ function deleteAllFromTag(request, response) {
   let sql = 'DELETE FROM cardtable WHERE tag=$1;';
   let safeValues = [tag];
   client.query(sql, safeValues);
-  console.log(request.body);
   let path = '/error';
   request.body.tag === 'wish-list' ? path = '/wish-list' : path = '/collection';
   response.redirect(path);
@@ -170,8 +168,17 @@ function deleteAllFromTag(request, response) {
 
 // SOFT SEARCH ON WISHLIST OR COLLECTION
 
-// function softSearchByName(request, body) {
+// function softSearchByName(request, response) {
+//   let { name } = request.body;
+//   let current = '';
+//   request.body.tag === 'wish-list' ? current = 'wish-list' : current = 'collection';
 
+//   let sql = `SELECT * FROM cardtable WHERE name = '%${searchstr}%' AND tag = ${current} ORDER BY id DESC;`;
+//   let safeValues = [name];
+//   client.query(sql, safeValues)
+//   let path = '/error';
+//   request.body.tag === 'wish-list' ? path = '/wish-list' : path = '/collection';
+//   response.redirect(path);
 // }
 
 // ERROR

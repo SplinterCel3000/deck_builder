@@ -14,8 +14,8 @@
 
 <body>
   <div class="frame">
-    <h1>Results: <%= totalCardCount %></h1>
-    <a class="nav-button" href="/" target="_self">Home</a>
+    <a class="nav-button" href="/" target="_self">Home</a><br><br>
+    <h1><%= totalCardCount %> results for "<%= searchCriteria %>"</h1>
     <br><br>
 
     <% resultsArray.forEach(card => { %>

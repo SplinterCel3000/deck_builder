@@ -113,6 +113,19 @@ Actual time needed to complete: 1.5hrs
 - 12-30-2019 11:07am - Update button functional
 - 12-30-2019 11:47am - Delete card button functional
 - 12-30-2019 3:59pm - Delete collection or wishlist functional
+- 12-30-2019 ~5pm - Delete functionality improved, updated naming conventions
+
+---
+
+Number and name of feature: Day 3 - Soft Search with Drop Down Menu  
+​
+Estimate of time needed to complete: 3hrs  
+​
+Start time: 5pm 
+​
+Finish time: ____  
+​
+Actual time needed to complete: ____  
 ​
 ## Credits and Collaborations
 Brandon Johnson, Shingo Nakajima, Peter Cole, CodeFellows 301  
