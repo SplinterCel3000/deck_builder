@@ -79,7 +79,7 @@ function getCardInfo(request, response) {
     .catch(error => {
       console.log(`results page error: ${error}`);
       response.render('pages/error', { error: error });
-    })
+    });
 }
 
 // CARD WITH COLLECTION TAG CALL FROM DATABASE
