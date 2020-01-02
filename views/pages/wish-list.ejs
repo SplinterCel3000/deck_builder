@@ -20,16 +20,24 @@
     <a class="nav-button" href="/collection" target="_self">Collection</a>
     <br><br>
 
+     <!-- DELETE ALL FROM WISHLIST -->
+    
+    <form action="<%= `/deleteAll?_method=DELETE` %>" method="POST">
+      <input type="hidden" name="tag" value="wish-list"></input>
+      <button class="delete-button" type="submit">Delete All from Wish List</button>
+    </form>
+    <br><br>
+
     <% wishlistArray.forEach(card => { %>
     <div>
-      <img src=<%= card.image_url %>>
+      <img src=<%= card.image_url %>><br><br>
       <h3>Card Name: <%= card.name %></h3>
       <p>Release Date: <%= card.date %></p>
       <p>Standard: <%= card.legal0 %></p>
       <p>Pioneer: <%= card.legal1 %></p>
       <p>Modern: <%= card.legal2 %></p>
       <p>Legacy: <%= card.legal3 %></p>
-      <p>Commander: <%= card.legal4 %></p>
+      <p>Commander: <%= card.legal4 %></p><br>
 
       <!-- UPDATE TO COLLECTION -->
 
@@ -41,9 +49,10 @@
 
       <!-- DELETE FROM WISH LIST -->
 
-      <form action="<%= `/deleteWishList?_method=DELETE` %>" method="POST">
+      <form action="<%= `/delete?_method=DELETE` %>" method="POST">
         <input type="hidden" name="name" value="<%= card.name %>"></input>
-        <button  class="delete-button" class="nav-button" type="submit">Delete Card from Wish List</button>
+        <input type="hidden" name="tag" value="wish-list"></input>
+        <button  class="delete-button" type="submit">Delete Card from Wish List</button>
       </form>
       <hr><br>
     </div>

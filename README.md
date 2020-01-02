@@ -1,7 +1,7 @@
 # Deck Builder App
 ​
-**Authors**: Brandon Johnson, Shingo Nakajima, Peter Cole
-**Version**: 2.3.0 Functional Collection & Wishlist from Database
+**Authors**: Brandon Johnson, Shingo Nakajima, Peter Cole  
+**Version**: 3.2.0 Functional CRUD
 ​
 ## Overview
 Using the Skryfall API, query a deck building app that allows the tracking of desired and acquired cards.
@@ -10,7 +10,7 @@ Using the Skryfall API, query a deck building app that allows the tracking of de
 Modern browser with internet connection
 ​
 ## Architecture
-HTML, SMACSS, JS, JQUERY, AJAX, SQL, POSTMAN, HEROKU, EXPRESS, DOTENV, POSTGRES (PG), EJS, NODEMON, METHODOVERRIDE
+HTML, SMACSS, JS, JQUERY, AJAX, SQL, POSTMAN, HEROKU, EXPRESS, DOTENV, POSTGRES (PG), EJS, NODEMON, METHOD-OVERRIDE
 ​
 ## Change Log
 Number and name of feature: Day 1 - User stories, repository set up, file structure, wireframing, proof of life  
@@ -95,12 +95,12 @@ Finish time: ____
 Actual time needed to complete: ____
 ​
 - 12-28-2019 4:40pm - Content placed in frames, updated naming conventions
-
 - 12-29-2019 9:55am - Added Magic Font, fixed buttons
-- 12-29-2019 10:30am - SMACCSified style.css into base, layout, module
-- 12-30-2019 9:55am - Added Magic Font, fixed buttons
+- 12-30-2019 10:30am - SMACCSified style.css into base, layout, module
 
-Number and name of feature: Day 4 - Update & Delete Methods  
+---
+
+Number and name of feature: Day 3 - Update & Delete Methods  
 ​
 Estimate of time needed to complete: 2hrs  
 ​
@@ -111,11 +111,25 @@ Finish time: 11:47am
 Actual time needed to complete: 1.5hrs
 ​ 
 - 12-30-2019 11:07am - Update button functional
-- 12-30-2019 11:47am - Delete button functional
+- 12-30-2019 11:47am - Delete card button functional
+- 12-30-2019 3:59pm - Delete collection or wishlist functional
+- 12-30-2019 ~5pm - Delete functionality improved, updated naming conventions
+
+---
+
+Number and name of feature: Day 3 - Soft Search with Drop Down Menu  
+​
+Estimate of time needed to complete: 3hrs  
+​
+Start time: 5pm 
+​
+Finish time: ____  
+​
+Actual time needed to complete: ____  
 ​
 ## Credits and Collaborations
 Brandon Johnson, Shingo Nakajima, Peter Cole, CodeFellows 301  
-Orange CSS buttons inspired from https://www.w3schools.com/csS/css3_buttons.asp
+CSS buttons inspired from https://www.w3schools.com/csS/css3_buttons.asp
 ​
 ## Links
 * Trello: https://trello.com/b/0b6nE6fw/deck-builder
