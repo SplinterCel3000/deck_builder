@@ -59,6 +59,9 @@
   text-align: center;
 }
 
+.parent-div{
+  display:flex;
+}
 .card-img{
   flex:left;
   justify-content: space-evenly;
@@ -70,10 +73,6 @@ font-size:40px;
 
 p{
   font-size:35px;
-}
-
-.parent-div{
-  display:flex;
 }
 
 .all-information{
