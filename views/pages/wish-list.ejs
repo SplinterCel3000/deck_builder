@@ -15,21 +15,23 @@
 <body>
   <div class="frame">
 
-    <br>
-    <h1>Wish List</h1><br>
-    <a class="nav-button" href="/" target="_self">Home</a>
-    <a class="nav-button" href="/collection" target="_self">Collection</a>
+
+    <br><h1>Wish List</h1><br>
+    <a id = "home-button-wish-list" class="nav-button" href="/" target="_self">Home</a>
+    <a id = "collection-button-wish-list" class="nav-button" href="/collection" target="_self">Collection</a>
+
     <br><br>
 
     <!-- DELETE ALL FROM WISHLIST -->
 
     <form action="<%= `/deleteAll?_method=DELETE` %>" method="POST">
       <input type="hidden" name="tag" value="wish-list"></input>
-      <button class="delete-button" type="submit">Delete All from Wish List</button>
+      <button id = "delete-all-button-wish-list" class="delete-button" type="submit">Delete All from Wish List</button>
     </form>
     <br><br>
 
     <% wishlistArray.forEach(card => { %>
+
     <div class="parent-div">
       <div class="card-img">
         <img src=<%= card.image_url %>></div><br><br>
@@ -44,23 +46,25 @@
         <!-- UPDATE TO COLLECTION -->
         <form action="<%= `/update?_method=PUT` %>" method="POST">
           <input type="hidden" name="name" value="<%= card.name %>"></input>
-          <button class="nav-button" type="submit">Add Card to Collection</button>
+          <button id = "add-to-collection-wish-list" class="nav-button" type="submit">Add Card to Collection</button>
         </form>
         <br>
         <!-- DELETE FROM WISH LIST -->
         <form action="<%= `/delete?_method=DELETE` %>" method="POST">
           <input type="hidden" name="name" value="<%= card.name %>"></input>
           <input type="hidden" name="tag" value="wish-list"></input>
-          <button class="delete-button" type="submit">Delete Card from Wish List</button>
+          <button id = "delete-button-wish-list" class="delete-button" type="submit">Delete Card from Wish List</button>
         </form>
       </div>
+
     </div>
     <hr><br>
     <% }) %>
 
   </div> <!-- frame div close tag -->
 
-  <script src="./js/app.js"></script>
+  <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="js/app.js"></script>
 </body>
 
 </html>
