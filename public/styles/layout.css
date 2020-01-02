@@ -62,17 +62,14 @@
 .card-img{
   flex:left;
   justify-content: space-evenly;
-  
-
 }
 
 h3{
-font-size:30px;
-
+font-size:40px;
 }
 
 p{
-  font-size:25px;
+  font-size:35px;
 }
 
 .parent-div{
@@ -82,8 +79,7 @@ p{
 .all-information{
 flex:right;
 justify-content: space-evenly;
-padding: 50px;
-
+padding: 140px;
 }
 
 .nav-button {
