@@ -15,9 +15,17 @@
 <body>
   <div class="frame">
 
-    <h1>Collection</h1>
+    <br><h1>Collection</h1><br>
     <a class="nav-button" href="/" target="_self">Home</a>
     <a class="nav-button" href="/wish-list" target="_self">Wish List</a>
+    <br><br>
+
+    <!-- DELETE ALL FROM COLLECTION -->
+    
+    <form action="<%= `/deleteAll?_method=DELETE` %>" method="POST">
+      <input type="hidden" name="tag" value="collection"></input>
+      <button class="delete-button" type="submit">Delete All from Collection</button>
+    </form>
     <br><br>
 
     <% collectionArray.forEach(card => { %>
@@ -34,9 +42,9 @@
     
     <!-- DELETE FROM COLLECTION -->
     
-    <form action="<%= `/deleteCollection?_method=DELETE` %>" method="POST">
+    <form action="<%= `/delete?_method=DELETE` %>" method="POST">
       <input type="hidden" name="name" value="<%= card.name %>"></input>
-      <button class="nav-button" type="submit">Delete Card from Collection</button>
+      <button class="delete-button" class="nav-button" type="submit">Delete Card from Collection</button class="delete-button">
     </form>
     <hr><br>
 

@@ -38,8 +38,8 @@ app.get('/wish-list', getCardWishlist);
 app.post('/wish-list', addCardWishlist);
 
 app.put('/update', updateCard);
-app.delete('/deleteWishList', deleteCardWishList);
-app.delete('/deleteCollection', deleteCardCollection);
+app.delete('/delete', deleteCard);
+app.delete('/deleteAll', deleteAllFromTag);
 
 // PAGE RENDERING
 
@@ -141,24 +141,28 @@ function updateCard(request, response) {
   response.redirect('/collection');
 }
 
-// DELETE CARD FROM WISHLIST
+// DELETE CARD FROM WISHLIST OR COLLECTION
 
-function deleteCardWishList(request, response){
+function deleteCard(request, response) {
   let { name } = request.body;
   let sql = 'DELETE FROM cardtable WHERE name=$1;';
   let safeValues = [name];
   client.query(sql, safeValues);
-  response.redirect('/wish-list')
+  let path = '/error';
+  request.body === '/wishlist' ? path = '/wish-list' : path = '/collection';
+  response.redirect(path);
 }
 
-// DELETE CARD FROM COLLECTION
+// DELETE ALL WISHLIST OR COLLECTION
 
-function deleteCardCollection(request, response){
-  let {name} = request.body;
-  let sql = 'DELETE FROM cardtable WHERE name=$1;';
-  let safeValues = [name];
+function deleteAllFromTag(request, response) {
+  let { tag } = request.body;
+  let sql = 'DELETE FROM cardtable WHERE tag=$1;';
+  let safeValues = [tag];
   client.query(sql, safeValues);
-  response.redirect('/collection')
+  let path = '/error';
+  request.body === '/wishlist' ? path = '/wish-list' : path = '/collection';
+  response.redirect(path);
 }
 
 // ERROR
@@ -173,12 +177,17 @@ function NewCard(cardObj) {
   this.name = cardObj.name || 'no name available';
   this.date = cardObj.released_at || 'no release date available';
   this.image_url = cardObj.image_uris ? (cardObj.image_uris.normal ? cardObj.image_uris.normal : (cardObj.image_uris.png ? cardObj.image_uris.png : placeHolderImage)) : placeHolderImage;
-  this.legal0 = cardObj.legalities.standard || 'no legality available';
-  this.legal1 = cardObj.legalities.pioneer || 'no legality available';
-  this.legal2 = cardObj.legalities.modern || 'no legality available';
-  this.legal3 = cardObj.legalities.legacy || 'no legality available';
-  this.legal4 = cardObj.legalities.commander || 'no legality available';
+  this.legal0 = legalCleaner(cardObj.legalities.standard) || 'no legality available';
+  this.legal1 = legalCleaner(cardObj.legalities.pioneer) || 'no legality available';
+  this.legal2 = legalCleaner(cardObj.legalities.modern) || 'no legality available';
+  this.legal3 = legalCleaner(cardObj.legalities.legacy) || 'no legality available';
+  this.legal4 = legalCleaner(cardObj.legalities.commander) || 'no legality available';
   this.tag = cardObj.tag;
+}
+
+function legalCleaner(str) {
+  var regex = /_/gi;
+  return str.includes('_') ? str.replace(regex, ' ') : str;
 }
 
 // SERVER LISTENER
