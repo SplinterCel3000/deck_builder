@@ -34,6 +34,8 @@ app.post('/results', getCardInfo);
 app.get('/collection', getCardCollection);
 app.post('/collection', addCardCollection);
 
+// app.get('/collection', softSearchByName)
+
 app.get('/wish-list', getCardWishlist);
 app.post('/wish-list', addCardWishlist);
 
@@ -59,12 +61,11 @@ function errorRender(request, response) {
   response.render('pages/error');
 }
 
-// RESULTS PAGE RENDER from API
+// RESULTS PAGE RENDER FROM API
 
 function getCardInfo(request, response) {
   let url = 'https://api.scryfall.com/cards/search?q=';
   let searchCriteria = request.body.search;
-
   url += searchCriteria;
 
   superagent.get(url)
@@ -73,12 +74,12 @@ function getCardInfo(request, response) {
         return new NewCard(cardData);
       });
       let totalCardCount = (res.body.total_cards);
-      response.render('pages/results', { resultsArray: resultsArray, totalCardCount: totalCardCount });
+      response.render('pages/results', { resultsArray: resultsArray, totalCardCount: totalCardCount , searchCriteria: searchCriteria});
     })
     .catch(error => {
       console.log(`results page error: ${error}`);
       response.render('pages/error', { error: error });
-    })
+    });
 }
 
 // CARD WITH COLLECTION TAG CALL FROM DATABASE
@@ -93,22 +94,22 @@ function getCardCollection(request, response) {
     .catch(error => {
       console.log(`card collection error: ${error}`);
       response.render('pages/error', { error: error });
-    })
+    });
 }
 
 // CARD WITH WISHLIST TAG CALL FROM DATABASE
 
 function getCardWishlist(request, response) {
-  let sql = `SELECT * FROM cardtable WHERE tag = 'wishlist' ORDER BY id DESC;`;
+  let sql = `SELECT * FROM cardtable WHERE tag = 'wish-list' ORDER BY id DESC;`;
 
   client.query(sql)
     .then(results => {
       response.render('pages/wish-list', { wishlistArray: results.rows });
     })
     .catch(error => {
-      console.log(`card wishlist error: ${error}`);
+      console.log(`card wish-list error: ${error}`);
       response.render('pages/error', { error: error });
-    })
+    });
 }
 
 // ADD CARD TO COLLECTION
@@ -149,7 +150,7 @@ function deleteCard(request, response) {
   let safeValues = [name];
   client.query(sql, safeValues);
   let path = '/error';
-  request.body === '/wishlist' ? path = '/wish-list' : path = '/collection';
+  request.body.tag === 'wish-list' ? path = '/wish-list' : path = '/collection';
   response.redirect(path);
 }
 
@@ -161,9 +162,24 @@ function deleteAllFromTag(request, response) {
   let safeValues = [tag];
   client.query(sql, safeValues);
   let path = '/error';
-  request.body === '/wishlist' ? path = '/wish-list' : path = '/collection';
+  request.body.tag === 'wish-list' ? path = '/wish-list' : path = '/collection';
   response.redirect(path);
 }
+
+// SOFT SEARCH ON WISHLIST OR COLLECTION
+
+// function softSearchByName(request, response) {
+//   let { name } = request.body;
+//   let current = '';
+//   request.body.tag === 'wish-list' ? current = 'wish-list' : current = 'collection';
+
+//   let sql = `SELECT * FROM cardtable WHERE name = '%${searchstr}%' AND tag = ${current} ORDER BY id DESC;`;
+//   let safeValues = [name];
+//   client.query(sql, safeValues)
+//   let path = '/error';
+//   request.body.tag === 'wish-list' ? path = '/wish-list' : path = '/collection';
+//   response.redirect(path);
+// }
 
 // ERROR
 
@@ -171,7 +187,7 @@ app.use('*', (request, response) => {
   response.status(404).send('ERR 404: Page Not Found');
 });
 
-// CONSTRUCTOR FOR CARDS
+// CONSTRUCTOR FOR CARDS w/ UNDERSCORE CLEANER FUNCTION
 
 function NewCard(cardObj) {
   this.name = cardObj.name || 'no name available';
