@@ -21,6 +21,7 @@
     <br><br>
 
     <% collectionArray.forEach(card => { %>
+
     <div>
       <img src=<%= card.image_url %>>
       <h3>Card Name: <%= card.name %></h3>
@@ -31,9 +32,10 @@
       <p>Legacy: <%= card.legal3 %></p>
       <p>Commander: <%= card.legal4 %></p>
     </div>
-    
+
+
     <!-- DELETE FROM COLLECTION -->
-    
+
     <form action="<%= `/deleteCollection?_method=DELETE` %>" method="POST">
       <input type="hidden" name="name" value="<%= card.name %>"></input>
       <button class="nav-button" type="submit">Delete Card from Collection</button>

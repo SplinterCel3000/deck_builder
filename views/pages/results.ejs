@@ -19,52 +19,55 @@
     <br><br>
 
     <% resultsArray.forEach(card => { %>
-    <div>
-      <img src=<%= card.image_url %>>
-      <h3>Card Name: <%= card.name %></h3>
-      <p>Release Date: <%= card.date %></p>
-      <p>Standard: <%= card.legal0 %></p>
-      <p>Pioneer: <%= card.legal1 %></p>
-      <p>Modern: <%= card.legal2 %></p>
-      <p>Legacy: <%= card.legal3 %></p>
-      <p>Commander: <%= card.legal4 %></p>
+    <div class="cards">
+      <div class="child">
+        <div class="child-of-child">
+          <img src=<%= card.image_url %>>
+          <h3>Card Name: <%= card.name %></h3>
+          <p>Release Date: <%= card.date %></p>
+          <p>Standard: <%= card.legal0 %></p>
+          <p>Pioneer: <%= card.legal1 %></p>
+          <p>Modern: <%= card.legal2 %></p>
+          <p>Legacy: <%= card.legal3 %></p>
+          <p>Commander: <%= card.legal4 %></p>
 
-      <form action="/results" method="post"></form>
-
+          <form action="/results" method="post"></form>
+        </div>
+      </div>
       <!-- ADD TO WISH LIST -->
 
       <form action="/wish-list" method="post">
-          <input type="hidden" name="name" value="<%= card.name %>"></input>
-          <input type="hidden" name="date" value="<%= card.date %>"></input>
-          <input type="hidden" name="image_url" value="<%= card.image_url %>"></input>
-          <input type="hidden" name="legal0" value="<%= card.legal0 %>"></input>
-          <input type="hidden" name="legal1" value="<%= card.legal1 %>"></input>
-          <input type="hidden" name="legal2" value="<%= card.legal2 %>"></input>
-          <input type="hidden" name="legal3" value="<%= card.legal3 %>"></input>
-          <input type="hidden" name="legal4" value="<%= card.legal4 %>"></input>
-          <input type="hidden" name="tag" value="wishlist"></input>
-          <button class="nav-button" type="submit">Add Card to Wish List</button>
+        <input type="hidden" name="name" value="<%= card.name %>"></input>
+        <input type="hidden" name="date" value="<%= card.date %>"></input>
+        <input type="hidden" name="image_url" value="<%= card.image_url %>"></input>
+        <input type="hidden" name="legal0" value="<%= card.legal0 %>"></input>
+        <input type="hidden" name="legal1" value="<%= card.legal1 %>"></input>
+        <input type="hidden" name="legal2" value="<%= card.legal2 %>"></input>
+        <input type="hidden" name="legal3" value="<%= card.legal3 %>"></input>
+        <input type="hidden" name="legal4" value="<%= card.legal4 %>"></input>
+        <input type="hidden" name="tag" value="wishlist"></input>
+        <button class="nav-button" type="submit">Add Card to Wish List</button>
       </form>
-      <br>
+
 
       <!-- ADD TO COLLECTION -->
 
       <form action="/collection" method="post">
 
-          <input type="hidden" name="name" value="<%= card.name %>"></input>
-          <input type="hidden" name="date" value="<%= card.date%>"></input>
-          <input type="hidden" name="image_url" value="<%= card.image_url %>"></input>
-          <input type="hidden" name="legal0" value="<%= card.legal0 %>"></input>
-          <input type="hidden" name="legal1" value="<%= card.legal1 %>"></input>
-          <input type="hidden" name="legal2" value="<%= card.legal2 %>"></input>
-          <input type="hidden" name="legal3" value="<%= card.legal3 %>"></input>
-          <input type="hidden" name="legal4" value="<%= card.legal4 %>"></input>
-          <input type="hidden" name="tag" value="collection"></input>
-          <button class="nav-button" type="submit">Add Card to Collection</button>
+        <input type="hidden" name="name" value="<%= card.name %>"></input>
+        <input type="hidden" name="date" value="<%= card.date%>"></input>
+        <input type="hidden" name="image_url" value="<%= card.image_url %>"></input>
+        <input type="hidden" name="legal0" value="<%= card.legal0 %>"></input>
+        <input type="hidden" name="legal1" value="<%= card.legal1 %>"></input>
+        <input type="hidden" name="legal2" value="<%= card.legal2 %>"></input>
+        <input type="hidden" name="legal3" value="<%= card.legal3 %>"></input>
+        <input type="hidden" name="legal4" value="<%= card.legal4 %>"></input>
+        <input type="hidden" name="tag" value="collection"></input>
+        <button class="nav-button" type="submit">Add Card to Collection</button>
       </form>
       <br>
     </div>
-    <hr><br>
+
     <% }) %>
 
     <!-- Add Detail button  -->
