@@ -33,7 +33,8 @@
     <% collectionArray.forEach(card => { %>
     <div class="parent-div">
       <div class="card-img">
-        <img src=<%= card.image_url %>></div>
+        <img src=<%= card.image_url %>>
+      </div>
       <div class="all-information">
         <h3>Card Name: <%= card.name %></h3>
         <p>Release Date: <%= card.date %></p>
@@ -48,22 +49,13 @@
         <form action="<%= `/delete?_method=DELETE` %>" method="POST">
           <input type="hidden" name="name" value="<%= card.name %>"></input>
           <input type="hidden" name="tag" value="collection"></input>
-          <button class="delete-button" class="nav-button" type="submit">Delete Card from Collection</button
-            class="delete-button">
+          <button id = "delete-button-collection" class="delete-button" type="submit">Delete Card from Collection</button class="delete-button">
         </form>
+        <hr><br>
+        <% }) %>
+
       </div>
     </div>
-
-    
-    <!-- DELETE FROM COLLECTION -->
-    
-    <form action="<%= `/delete?_method=DELETE` %>" method="POST">
-      <input type="hidden" name="name" value="<%= card.name %>"></input>
-      <input type="hidden" name="tag" value="collection"></input>
-      <button id = "delete-button-collection" class="delete-button" type="submit">Delete Card from Collection</button class="delete-button">
-    </form>
-    <hr><br>
-    <% }) %>
   </div>
  
   <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
