@@ -126,6 +126,36 @@ Start time: 5pm
 Finish time: ____  
 ​
 Actual time needed to complete: ____  
+
+---
+
+Number and name of feature: Day 4 - User Input Changes Button Colors with jQuery  
+​
+Estimate of time needed to complete: 1 hour  
+​
+Start time: 11am  
+​
+Finish time: 12pm  
+​
+Actual time needed to complete: 1 hour
+​
+- 1-2-2020 12:04pm - Button jQuery events functional
+
+---
+
+Number and name of feature: Day 4 - Modularization  
+​
+Estimate of time needed to complete: 1hr  
+​
+Start time: 1:45pm  
+​
+Finish time: 2:25pm  
+​
+Actual time needed to complete: 40mins
+​ 
+- 1-02-2020 2:25pm - Properly modularized  
+
+---
 ​
 ## Credits and Collaborations
 Brandon Johnson, Shingo Nakajima, Peter Cole, CodeFellows 301  
